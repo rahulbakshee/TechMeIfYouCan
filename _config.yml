@@ -4,3 +4,6 @@ social_links:
   github: "http://github.com/rahulbakshee/"
   twitter: "https://twitter.com/rahulbakshee"
   linkedin: "https://linkedin.com/in/rahulbakshee"
+
+plugins:
+  - jekyll-twitter-plugin
