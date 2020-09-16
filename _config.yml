@@ -4,6 +4,7 @@ github_username: rahulbakshee
 
 # Email and twitter are optional:
 email:
+linkedin_username: rahulbakshee
 twitter_username: rahulbakshee
 
 # Set this to true to get LaTeX math equation support
@@ -20,11 +21,6 @@ plugins:
   - jekyll-octicons
   - jekyll-github-metadata
   - jekyll-twitter-plugin
-
-titles_from_headings:
-  enabled:     true
-  strip_title: true
-  collections: true
 
 highlighter: rouge
 markdown: kramdown
