@@ -5,8 +5,6 @@ I am a Data Scientist who uses Machine Learning, Deep Learning and Computer Visi
 
 <!--more-->
 
-(The post was originated from my talk for [WiMLDS x Fintech meetup](http://wimlds.org/chapters/about-bay-area/) hosted by [Affirm](www.affirm.com).)
-
 {: class="table-of-content"}
 * TOC
 {:toc}
