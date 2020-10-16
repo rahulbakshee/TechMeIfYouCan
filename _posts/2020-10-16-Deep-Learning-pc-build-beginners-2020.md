@@ -16,17 +16,13 @@ The **`cloud`** option is good in a sense that you don't have to worry about any
 Having a **`local setup`** is what I preferred because I wanted to feel the power at my finger tips, hear the fans running at full speed at extreme loads. Also, my (very)old laptop was broken and I needed something new anyhow.
 
 
-## How to Select parts for Deep Learning build(or any build)
-The two things which determine what parts you should get for your build
-  - Budget
-  - Purpose of the build
-
-`Budget` could be ranging from $500 to $10,000. It's up to you how much you can afford at the moment.
-
-`Purpose of the build` could be any of the `Deep Learning`, `Gaming`, `Editing` or a combination of them. Where you are going to keep this build? Whether you will be SSHing the build? How often you will be using it?
+## How to Select parts
+The two things I think are important for part selection
+  - `Budget` could be ranging from $500 to $10,000. It's up to you how much you can afford at the moment. Some people believe in spend lessnow and upgrade later whereas some people believe in wait for money to get accumulated and buy best parts in one shot.
+  - `Purpose of the build` could be any of the `Deep Learning`, `Gaming`, `Editing` or a combination of them. Where you are going to keep this build? Whether you will be physically using or SSHing the build? How often you will be using it?
 
 ## My PC parts list
-There are lots of brands and lots of options/configurations to choose from for a particular part. Given my little knowledge of hardware and abundant knowledge feely available on internt it was easy to get lost. But with the help of articles, videos, forums and folks on the interent I was able to pull this off. 
+There are lots of brands and lots of options/configurations to choose from for a particular part. Given my little knowledge of hardware and abundant knowledge freely available on internt it was easy to get lost. But with the help of lots of articles, videos, forums and folks on the interent I was able to pull this off. 
 
 Due to Covid-19, the availability of parts was big issue and if available in my country the prices were skyrocketing. I knew I had to spend more than I anticipated. But still I went ahead as I urgently needed a pc/laptop to stay in practice.
 
