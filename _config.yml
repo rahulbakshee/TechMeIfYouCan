@@ -11,7 +11,7 @@ linkedin_username: rahulbakshee
 use_math: true
 
 # Add your Google Analytics ID here if you have one and want to use it
-google_analytics:
+google_analytics: UA-180649952-1
 
 # Everything below here can be ignored, unless you want to change the theme entirely
 theme: minima
