@@ -1,4 +1,4 @@
-# Deep Learning pc build for beginners in 2020
+# Deep Learning PC Build for Beginners in 2020
 
 Hello World !!! 
 
@@ -7,7 +7,7 @@ Hello World !!!
 As you might be knowing Deep Learning is a subset of Machine Learning where you deal with complex problems like Image & Text using different Neaural Network Architectures. So, there will be lots of neurons in lots of hidden layers (millions and maybe billions of parameteres) and the job would be to get the optimal weights for these neurons. 
 
 ## Cloud vs Local
-Now you must be wodering about which compute option to choose between cloud or having your own pc. Each option has its own prose and cons. But as a `beginner` I would suggest you to first go to [Google Colab](https://colab.research.google.com/) and give it a try. Although it has some limitations on usage but it won't matter if you are a beginner.
+`Storage` and `Compute` are the two most important things even when doing any kind of Data Analysis. Now you must be wodering about which compute option to choose between cloud or having your own pc. Each option has its own prose and cons. But as a `beginner` I would suggest you to first go to [Google Colab](https://colab.research.google.com/) and give it a try. Although it has some limitations on usage but it won't matter if you are a beginner.
 And you will get **`free CPU/GPU/TPU`**. Yesssss you read it right !!!
 
 
@@ -17,10 +17,37 @@ Having a **`local setup`** is what I preferred because I wanted to feel the powe
 
 
 ## How to Select parts for Deep Learning build(or any build)
-The two main things to consider here are:
+The two things which determine what parts you should get for your build
   - Budget
   - Purpose of the build
-These two things will determine what parts you should get for your build.
+
+`Budget` could be ranging from $500 to $10,000. It's up to you how much you can afford at the moment.
+
+`Purpose of the build` could be any of the `Deep Learning`, `Gaming`, `Editing` or a combination of them. Where you are going to keep this build? Whether you will be SSHing the build? How often you will be using it?
+
+## My PC parts list
+
+**`1. GPU`**
+**`2. CPU`**
+**`3. CPU Cooler`**
+**`4. Motherboard`**
+**`5. RAM`**
+**`6. `**
+**`7. `**
+**`8. `**
+**`9. `**
+**`10. `**
+**`11. `**
+**`12. `**
+**`13. `**
+
+
+
+## Reference:
+[pcpartpicker](https://pcpartpicker.com/) 
+
+
+
 
 
 
