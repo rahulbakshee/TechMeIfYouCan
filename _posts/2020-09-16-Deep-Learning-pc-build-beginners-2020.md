@@ -13,7 +13,7 @@ And you will get **`free CPU/GPU/TPU`**. Yesssss you read it right !!!
 
 The **`cloud`** option is good in a sense that you don't have to worry about any setup or assembling hardwares. Just spin up some instances and you are good to go. You only have to worry about shutting them down when not in use.
 
-Having a **`local setup`** is what I preferred because I wanted to feel the power at my finger tips, hear the fans running at full speed at extreme load. Also, my (very)old laptop was broken and I needed something new anyhow.
+Having a **`local setup`** is what I preferred because I wanted to feel the power at my finger tips, hear the fans running at full speed at extreme loads. Also, my (very)old laptop was broken and I needed something new anyhow.
 
 
 ## How to Select parts for Deep Learning build(or any build)
@@ -26,20 +26,27 @@ The two things which determine what parts you should get for your build
 `Purpose of the build` could be any of the `Deep Learning`, `Gaming`, `Editing` or a combination of them. Where you are going to keep this build? Whether you will be SSHing the build? How often you will be using it?
 
 ## My PC parts list
+in no particular order
 
 **`1. GPU`**
+
+A Graphical Processing Unit should be the first and one of the most important things to be considered when buiilding a Deep Learning rig. It has many cores to handle the high compute(matrix multiplication). AMD and NVIDIA are the two top brands in race but you might want to go with Nvidia for CUDA and cuDNN. Also, the GPU RAM should be as high as possible to have larger batches to train. When I built my pc, the Nvidia RTX 30XX series GPUs were not launched and there was no point in buying 10XX or 20XX series GPUs(costly but less performing). So I went ahead with the **`Nvidia GTX 1660 SUPER`** for hvaing the best price to perfomance ratio at that time and keeping in mind to upgrade to a 30XX series RTX graphhics card in early 2021.
+
 **`2. CPU`**
+
 **`3. CPU Cooler`**
 **`4. Motherboard`**
 **`5. RAM`**
-**`6. `**
-**`7. `**
-**`8. `**
-**`9. `**
-**`10. `**
-**`11. `**
-**`12. `**
-**`13. `**
+**`6. Case`**
+**`7. PSU`**
+**`8. SSD`**
+**`9. Monitor`**
+**`10. WebCam`**
+**`11. Keyboard`**
+**`12. Mouse`**
+**`13. Headset`**
+**`14. USB Drive`**
+
 
 
 
