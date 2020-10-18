@@ -1,6 +1,6 @@
 title: iWriteHere
-name: "rahul bakshee blog"
-# author: Rahul Bakshee
+name: "rahul bakshee's blog"
+author: Rahul Bakshee
 description: happy❤learning
 baseurl: "/iWriteHere"
 profile_url: "https://rahulbakshee.github.io"
@@ -27,10 +27,10 @@ plugins:
   - jekyll-feed
   - jekyll-archives
 
-titles_from_headings:
-  enabled:     true
-  strip_title: true
-  collections: true
+# titles_from_headings:
+#  enabled:     true
+#   strip_title: true
+#   collections: true
   
 highlighter: rouge
 markdown: kramdown
