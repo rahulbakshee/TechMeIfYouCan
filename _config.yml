@@ -19,6 +19,7 @@ plugins:
   - jekyll-gist
   - jekyll-octicons
   - jekyll-github-metadata
+  - jekyll-seo-tag
 
 highlighter: rouge
 markdown: kramdown
