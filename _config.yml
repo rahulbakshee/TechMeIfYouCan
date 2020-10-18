@@ -27,6 +27,11 @@ plugins:
   - jekyll-feed
   - jekyll-archives
 
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: true
+  
 highlighter: rouge
 markdown: kramdown
 excerpt_separator: <!--more-->
