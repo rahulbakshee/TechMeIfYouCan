@@ -1,4 +1,6 @@
 title: iWriteHere
+name: "rahul bakshee blog"
+author: Rahul Bakshee
 description: Happy blogging... ❤
 baseurl: "/iWriteHere"
 profile_url: "https://rahulbakshee.github.io"
@@ -27,6 +29,7 @@ plugins:
 
 highlighter: rouge
 markdown: kramdown
+excerpt_separator: <!--more-->
 kramdown:
   math_engine: katex
   input: GFM
