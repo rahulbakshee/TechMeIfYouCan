@@ -1,7 +1,7 @@
-#title: iWriteHere
-name: "rahul bakshee's blog"
-author: Rahul Bakshee
-description: happy❤learning
+title: iWriteHere
+name: happy❤learning
+# author: Rahul Bakshee
+description: happy❤coding
 baseurl: "/iWriteHere"
 profile_url: "https://rahulbakshee.github.io"
 
