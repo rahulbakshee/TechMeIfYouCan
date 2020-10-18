@@ -1,3 +1,4 @@
+{% seo %}
 
 {: class="table-of-content"}
 * TOC
