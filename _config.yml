@@ -20,6 +20,8 @@ plugins:
   - jekyll-octicons
   - jekyll-github-metadata
   - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-archives
 
 highlighter: rouge
 markdown: kramdown
