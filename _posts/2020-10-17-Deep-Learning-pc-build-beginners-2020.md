@@ -1,3 +1,10 @@
+
+{: class="table-of-content"}
+* TOC
+{:toc}
+
+---
+
 Hello World !!! 
 
 Being in the field of Data Science or Artificial Intelligence is tough because it's `Disruptive` in nature. Every year hundreds of GOOD papers/techniques are open sources whoc claim to be state-of-the-art and it's very hard to keep up with all of them. I find a combination of theory and practice to be very effective for learning new things. **`Quickly skim through the paper and jump on to the code to feel how it works. And of course this is an iterative process.`**
