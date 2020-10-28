@@ -110,10 +110,18 @@ After all the parts are in place you need to install Operating System(s). For th
 - Start practicing
 - start writing about it
 - make video tutorials 
-- enjoy
+- enjoy the journey
 
 ## Reference:
+gamersnexus, JayzTwoCents, Linus Tech Tips, Bitwit and countless others on [YouTube](https://www.youtube.com/)
+
 [pcpartpicker](https://pcpartpicker.com/) 
+
 [Tim Dettmers](https://timdettmers.com/)
+
+[r/buildapc](https://www.reddit.com/r/buildapc)
+
+[r/IndianGaming](https://www.reddit.com/r/IndianGaming/)
+
 
 
