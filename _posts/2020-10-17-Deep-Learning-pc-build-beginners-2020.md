@@ -14,7 +14,7 @@ Being in the field of Data Science or Artificial Intelligence is tough because i
 
 As you might be knowing Deep Learning is a subset of Machine Learning where you deal with complex problems like Image & Text using different Neaural Network Architectures. So, there will be lots of neurons in lots of hidden layers (millions and maybe billions of parameteres) and the job would be to get the optimal weights for these neurons. One needs enough compute power for faster prototyping and quicker model training.
 
-## Cloud vs Local
+## Cloud vs Local & the ROI-Return on Investment
 `Storage` and `Compute` are the two most important things doing any kind of Data Analysis. Now you must be wodering about which compute option to choose between cloud or having your own pc. Each option has its own prose and cons. But as a `beginner` I would suggest you to first go to [Google Colab](https://colab.research.google.com/) and give it a try. Although it has some limitations on usage but it won't matter if you are a beginner.
 And you will get **`free CPU/GPU/TPU`**. Yesssss you read it right !!!
 
@@ -23,6 +23,7 @@ The **`cloud`** option is good in a sense that you don't have to worry about any
 
 Having a **`local setup`** is what I preferred because `I wanted to feel the power at my finger tips, hear the fans running at full speed at extreme loads. I wanted to have the pleasure of unboxing and assembling all parts to make one. In longer run it would be cheaper than the Cloud option. Also, my (very)old laptop was broken and I needed something new anyhow.`
 
+I would say that ROI is better in option#1 when you don't have serious intentions to do DL work and you might leave the practice in near future. But if you are serious and will anyhow use those GPU cores to fullest, the cost of pc parts will pay off in 6 months to 1 year.
 
 ## How to Select parts
 The two things I think are important for part selection
