@@ -1,6 +1,10 @@
-![first](/images/neural_net.png)
----
+![](/images/neural_net.png)
 
+{: class="table-of-content"}
+* TOC
+{:toc}
+
+---
 Hello World !!! 
 
 The field of Data Science or Artificial Intelligence is challanging because of it's `Disruptive` nature. Every year hundreds of GOOD papers/techniques are open sourced which claim to be state-of-the-art and it's very hard to keep up with all of them. I find a combination of theory and practice to be very effective for learning new things. **`Quickly skim through the paper and jump on to the code to feel how it works. And of course this is an iterative process.`**
