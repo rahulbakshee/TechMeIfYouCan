@@ -81,16 +81,16 @@ I did not buy any Hard Disc Drive because first they are slow compared to SSDs a
 
 ### **`10. Monitor`**
 
-A monitor has many types IPS/VA/TN and usages Coding/Gaming/Editing. From programming and coding perspective, I have heard it is recommended IPS monitor having a good `PPI-Pixel per Inch`. Some prefer large screen monitors for better experience while some prefer multi medium-size monitor setup for productivity. I bought **`Dell UltraSharp U2415 24" monitor`** and planning to add a **`BenQ 27" GW2780 monitor`** in near future.
+A monitor has many types IPS/VA/TN and usages Coding/Gaming/Editing. From programming and coding perspective, I have heard it is recommended IPS monitor having a good PPI-Pixel per Inch. Some prefer large screen monitors for better experience while some prefer multi medium-size monitor setup for productivity. I bought **`Dell UltraSharp U2415 24" monitor`** and planning to add a **`BenQ 27" GW2780 monitor`** in near future.
 
 ### **`11. WebCam`**
 
-If you are learning `CV-Computer Vision` you must need an external camera or a built-in one in your laptop. This is probably an overkill but I bought **`Logitech C930e`** not just for CV but also for live meetings & streams.
+If you are learning Computer Vision you must have an external camera or a built-in one in your laptop. This is probably an overkill but I bought **`Logitech C930e`** not just for CV but also for live meetings & streams.
 
 
 ### **`12. Keyboard`**
 
-I did a lot of research for `Mechanical vs Membrane`. After years of using membrane keyboards I finally went with a Mechanical one and got **`Cosmic Byte CB-GK-16 Firefly RGB`**
+I did a lot of research for Mechanical vs Membrane. After years of using membrane keyboards I finally went with a Mechanical one and got **`Cosmic Byte CB-GK-16 Firefly RGB`**
 
 ### **`13. Mouse`**
 
@@ -117,8 +117,8 @@ After all the parts are in place you need to install Operating System(s). For th
 - enjoy the journey
 
 
-## Reference:
-gamersnexus, JayzTwoCents, Linus Tech Tips, Bitwit and countless others on [YouTube](https://www.youtube.com/) [Quora](https://www.quora.com/) [Medium](https://medium.com/) and other forums
+## References
+gamersnexus, JayzTwoCents, Linus Tech Tips, Bitwit and countless others
 
 [pcpartpicker](https://pcpartpicker.com/) 
 
