@@ -1,4 +1,4 @@
-<img src="/images/neural_net.png" />
+![first](/images/neural_net.PNG)
 
 {: class="table-of-content"}
 * TOC
