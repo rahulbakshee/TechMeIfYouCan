@@ -1,12 +1,5 @@
-
 ![first](/images/neural_net.jpg)
 
----
-{: class="table-of-content"}
-* TOC
-{:toc}
-
----
 
 Hello World !!! 
 
