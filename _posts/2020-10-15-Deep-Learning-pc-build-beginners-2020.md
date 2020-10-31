@@ -1,4 +1,4 @@
-![first](/images/neural_net.jpg)
+![first](../images/neural_net.jpg)
 
 
 Hello World !!! 
@@ -31,7 +31,7 @@ The two things I think are important for part selection
 
 ## My pc parts list
 
-![second](/images/all_in_one.jpg)
+![second](../images/all_in_one.jpg)
 
 > [my pcpartpicker list](https://pcpartpicker.com/list/GVNHBc)
 
