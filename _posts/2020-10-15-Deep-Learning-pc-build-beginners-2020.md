@@ -1,9 +1,13 @@
+
+![first](/images/neural_net.jpg)
+
+---
 {: class="table-of-content"}
 * TOC
 {:toc}
 
 ---
-![all in one](images/all_in_one.jpg)
+
 Hello World !!! 
 
 The field of Data Science or Artificial Intelligence is challanging because of it's `Disruptive` nature. Every year hundreds of GOOD papers/techniques are open sourced which claim to be state-of-the-art and it's very hard to keep up with all of them. I find a combination of theory and practice to be very effective for learning new things. **`Quickly skim through the paper and jump on to the code to feel how it works. And of course this is an iterative process.`**
@@ -33,6 +37,8 @@ The two things I think are important for part selection
   - `Purpose of the build` could be any of the `Deep Learning`, `Gaming`, `Editing` or a combination of them. Where you are going to keep this build? Whether you will be physically using or SSHing the build? How often you will be using it?
 
 ## My pc parts list
+
+![second](/images/all_in_one.jpg)
 
 > [my pcpartpicker list](https://pcpartpicker.com/list/GVNHBc)
 
