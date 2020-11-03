@@ -2,8 +2,9 @@ title: iWriteHere
 name: 'happy❤learning'
 author: Rahul Bakshee
 description: happy❤learning
-#baseurl: "/iWriteHere"
-profile_url: "https://rahulbakshee.github.io"
+# baseurl: "/iWriteHere"
+# profile_url: "https://rahulbakshee.github.io"
+url: "https://rahulbakshee.github.io"
 
 # Email and twitter are optional:
 # youtube_username: UCjZ09Tf8WvvsYoHmDZWsWBQ
