@@ -33,7 +33,7 @@ The two things I think are important for part selection
 
 ## My pc parts list
 
-![2](/images/all_in_one.jpg)
+![](/images/all_in_one.PNG)
 
 > [my pcpartpicker list](https://pcpartpicker.com/list/GVNHBc)
 
