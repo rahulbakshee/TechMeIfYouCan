@@ -28,7 +28,7 @@ I would say that ROI is better in option#1 when you don't have serious intention
 
 ## Things to keep in mind when selecting parts
 The two things I think are important for part selection
-  - `Budget` could be anything for example ranging from $500 to $10,000 or more. It's up to you how much you can afford at the moment. Some people believe in spend lessnow and upgrade later whereas some people believe in wait for money to get accumulated and buy best parts in one shot.
+  - `Budget` could be anything for example ranging from $ 500 to $ 10,000 or more. It's up to you how much you can afford at the moment. Some people believe in spend lessnow and upgrade later whereas some people believe in wait for money to get accumulated and buy best parts in one shot.
   - `Purpose of the build` could be any of the `Deep Learning`, `Gaming`, `Editing` or a combination of them. Where you are going to keep this build? Whether you will be physically using or SSHing the build? How often you will be using it?
 
 ## My pc parts list
