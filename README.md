@@ -2,6 +2,6 @@ A Data Scientist working on Machine Learning, Deep Learning, Computer Vision and
 
 I write about Software, Hardware and Tech in general. 
 
-Visit the ![Contact](https://rahulbakshee.github.io/iWriteHere/contact.html) page to know more about me.
+Visit the [Contact](https://rahulbakshee.github.io/iWriteHere/contact.html) page to know more about me.
 
 ---
