@@ -1,3 +1,5 @@
+![nn]({{ '/images/2020-10-15-neural_net.png' | relative_url }})
+
 {: class="table-of-content"}
 * TOC
 {:toc}
@@ -33,17 +35,7 @@ The two things I think are important for part selection
 
 ## My pc parts list
 
-
-![Artificial neural network1]({{ '/images/all1.png' | relative_url }})
-
-![Artificial neural network2]({{ '/images/all2.PNG' | relative_url }})
-
-![Artificial neural network5]({{ 'images/all1.png' | relative_url }})
-
-![Artificial neural network6]({{ 'images/all2.PNG' | relative_url }})
-
-
-
+![all_in_one]({{ '/images/2020-10-15-all1.png' | relative_url }})
 
 > [my pcpartpicker list](https://pcpartpicker.com/list/GVNHBc)
 
