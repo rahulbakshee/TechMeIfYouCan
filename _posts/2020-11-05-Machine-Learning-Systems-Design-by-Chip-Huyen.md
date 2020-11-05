@@ -6,8 +6,7 @@ I highly encourage you to read her [Machine Learning Systems Design book](https:
 
 
 Table of contents from her book:-
-![table-of-contents](/images/2020-11-05-TOC.PNG)
 
-
+![table-of-contents]({{ '/images/2020-11-05-TOC.PNG' | relative_url }})
 
 For **`Questions and Answers`** please visit [my git repo](https://github.com/rahulbakshee/cp/tree/master/System-Design)
