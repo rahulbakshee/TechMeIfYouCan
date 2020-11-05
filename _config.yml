@@ -9,9 +9,9 @@ profile_url: "https://rahulbakshee.github.io"
 
 # Email and twitter are optional:
 # youtube_username: UCjZ09Tf8WvvsYoHmDZWsWBQ
-twitter_username: rahulbakshee
-github_username: rahulbakshee
-linkedin_username: rahulbakshee
+# twitter_username: rahulbakshee
+# github_username: rahulbakshee
+# linkedin_username: rahulbakshee
 
 # Set this to true to get LaTeX math equation support
 use_math: true
