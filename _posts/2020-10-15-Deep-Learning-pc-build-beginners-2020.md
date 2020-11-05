@@ -35,6 +35,8 @@ The two things I think are important for part selection
 
 ![agggg](../images/all1.png)
 
+![aagggg](../images/2020-11-05-TOC.PNG)
+
 > [my pcpartpicker list](https://pcpartpicker.com/list/GVNHBc)
 
 There are lots of brands and lots of options/configurations to choose from for a particular part. Given my little knowledge of hardware and abundant knowledge freely available on internt it was easy to get lost. But with the help of lots of articles, videos, forums and folks on the interent I was able to pull this off. 
