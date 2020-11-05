@@ -10,4 +10,4 @@ Table of contents from her book:-
 
 
 
-For `**Questions and Answers**` please visit [my git repo](https://github.com/rahulbakshee/cp/tree/master/System-Design)
+For **`Questions and Answers`** please visit [my git repo](https://github.com/rahulbakshee/cp/tree/master/System-Design)
