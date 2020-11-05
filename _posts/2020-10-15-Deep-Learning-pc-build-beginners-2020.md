@@ -41,6 +41,16 @@ The two things I think are important for part selection
 
 ![in](all1.png)
 
+
+-----
+
+
+![1](../images/all2.PNG)
+
+![top](../all2.PNG)
+
+![in](all2.PNG)
+
 > [my pcpartpicker list](https://pcpartpicker.com/list/GVNHBc)
 
 There are lots of brands and lots of options/configurations to choose from for a particular part. Given my little knowledge of hardware and abundant knowledge freely available on internt it was easy to get lost. But with the help of lots of articles, videos, forums and folks on the interent I was able to pull this off. 
