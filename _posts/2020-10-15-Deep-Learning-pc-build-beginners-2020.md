@@ -33,23 +33,22 @@ The two things I think are important for part selection
 
 ## My pc parts list
 
-![1](../images/all1.png)
 
-![2](../images/2020-11-05-TOC.PNG)
+![Artificial neural network1]({{ '/images/all1.png' | relative_url }})
 
-![top](../all1.png)
-
-![in](all1.png)
+![Artificial neural network2]({{ '/images/all2.PNG' | relative_url }})
 
 
------
+![Artificial neural network3]({{ '../images/all1.png' | relative_url }})
+
+![Artificial neural network4]({{ '../images/all2.PNG' | relative_url }})
 
 
-![1](../images/all2.PNG)
+![Artificial neural network5]({{ 'images/all1.png' | relative_url }})
 
-![top](../all2.PNG)
+![Artificial neural network6]({{ 'images/all2.PNG' | relative_url }})
 
-![in](all2.PNG)
+
 
 > [my pcpartpicker list](https://pcpartpicker.com/list/GVNHBc)
 
