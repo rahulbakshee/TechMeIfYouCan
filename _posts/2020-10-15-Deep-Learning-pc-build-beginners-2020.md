@@ -48,6 +48,13 @@ The two things I think are important for part selection
 
 ![Artificial neural network6]({{ 'images/all2.PNG' | relative_url }})
 
+![](/images/all2.PNG "fast.ai's logo")
+
+![](/images/all1.png "fast.ai's logo")
+
+![](../images/all2.PNG "fast.ai's logo")
+
+![](../images/all1.png "fast.ai's logo")
 
 
 > [my pcpartpicker list](https://pcpartpicker.com/list/GVNHBc)
