@@ -33,9 +33,13 @@ The two things I think are important for part selection
 
 ## My pc parts list
 
-![agggg](../images/all1.png)
+![1](../images/all1.png)
 
-![aagggg](../images/2020-11-05-TOC.PNG)
+![2](../images/2020-11-05-TOC.PNG)
+
+![top](../all1.png)
+
+![in](all1.png)
 
 > [my pcpartpicker list](https://pcpartpicker.com/list/GVNHBc)
 
