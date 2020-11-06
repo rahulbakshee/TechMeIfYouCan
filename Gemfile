@@ -20,6 +20,7 @@ end
 gem "jekyll-github-metadata"
 
 gem 'jekyll-seo-tag'
+gem 'jekyll-sitemap'
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
