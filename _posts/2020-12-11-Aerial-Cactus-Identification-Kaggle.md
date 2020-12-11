@@ -60,10 +60,6 @@ for i, index in enumerate(train_df[train_df["has_cactus"] == 0]["id"][:5]):
 ### split the data into train and val
 Next we will create a validation split to evaluate our training on train dataset.
 ```
-# convert target variable into 'str' type to avoid below error
-# TypeError: If class_mode="binary", y_col="has_cactus" column values must be strings.
-train_df["has_cactus"] = train_df["has_cactus"].astype('str')
-
 print("before split train shape", train_df.shape)
 train_df, val_df = train_test_split(train_df, test_size=0.2, stratify=train_df["has_cactus"], shuffle=True, random_state=seed)
 
@@ -72,7 +68,8 @@ val_df = val_df.reset_index(drop=True)
 
 print("after split train/val shape", train_df.shape, val_df.shape)
 ```
-
+before split train shape (17500, 2)
+after split train/val shape (14000, 2) (3500, 2)
 
 ### prepare data for modeling
 Loading the data using TensorFLow/Keras API from a folder where images of all the classes are clubbed into one folder. I mean there is no subfolder for each class. So, we will be using  `ImageDataGenerator` class which generates batches of tensor images with real-time data augmentation. From this class we will be using `flow_from_dataframe` method which will help us map image IDs to their respective images from the directory and generates batches of images.
@@ -104,10 +101,73 @@ val_generator = val_datagen.flow_from_dataframe(dataframe=val_df,
                                                    batch_size=batch_size,
                                                    seed = seed)
 ```
-### creating a Convolutional Neural Networks(CNN) model from scratch
+
+Found 14000 validated image filenames belonging to 2 classes.
+Found 3500 validated image filenames belonging to 2 classes.
+
+
+### creating a CNN model from scratch
+We will be creatign a simple Convolutional Neural Networks(CNN) model using keras layers and its function API for Models. We will be using Adam (with its default lr=0.001)as the optimizer,  'binary_crossentropy' as loss and 'AUC' as metrics.
+```
+inputs = Input(shape=(*target_size, 3))
+
+x = Conv2D(32, (3,3), activation='relu')(inputs)
+x = MaxPool2D((2,2))(x)
+x = Dropout(0.25)(x)
+
+x = Conv2D(64, (3,3), activation='relu')(x)
+x = MaxPool2D((2,2))(x)
+x = Dropout(0.25)(x)
+
+x = Conv2D(128, (3,3), activation='relu')(x)
+x = MaxPool2D((2,2))(x)
+x = Dropout(0.25)(x)
+
+x = GlobalMaxPool2D()(x)
+
+x = Dense(128, activation='relu')(x)
+x = Dropout(0.25)(x)
+
+outputs = Dense(1, activation='sigmoid')(x)
+
+model = Model(inputs, outputs)
+
+model.compile(optimizer='adam',
+              loss='binary_crossentropy',
+              metrics=['AUC'])
+```
+
+
 ### visualize learning curve
 ### use pretrained model
 ### visualize learning curve
+A very useful piece of code to visualize the learnign curves.
+```
+acc = history.history['accuracy']
+val_acc = history.history['val_accuracy']
+
+loss = history.history['loss']
+val_loss = history.history['val_loss']
+
+plt.figure(figsize=(8, 8))
+plt.subplot(2, 1, 1)
+plt.plot(acc, label='Training Accuracy')
+plt.plot(val_acc, label='Validation Accuracy')
+plt.legend(loc='lower right')
+plt.ylabel('Accuracy')
+plt.ylim([min(plt.ylim()),1])
+plt.title('Training and Validation Accuracy')
+
+plt.subplot(2, 1, 2)
+plt.plot(loss, label='Training Loss')
+plt.plot(val_loss, label='Validation Loss')
+plt.legend(loc='upper right')
+plt.ylabel('Cross Entropy')
+plt.ylim([0,1.0])
+plt.title('Training and Validation Loss')
+plt.xlabel('epoch')
+plt.show()
+```
 ### prediction on test data
 
 ## Learnings
