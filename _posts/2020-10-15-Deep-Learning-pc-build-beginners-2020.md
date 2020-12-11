@@ -1,6 +1,6 @@
 ![nn]({{ '/images/2020-10-15-neural_net.png' | relative_url }})
-{: style="align: center; width: 600px; max-width: 100%;"}
-*[credits](https://unsplash.com/collections/7516247/network)*
+{: style="width: 600px; max-width: 100%;"}
+*[Unsplash credits](https://unsplash.com/collections/7516247/network)*
 
 {: class="table-of-content"}
 * TOC
