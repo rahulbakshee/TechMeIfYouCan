@@ -69,6 +69,7 @@ val_df = val_df.reset_index(drop=True)
 print("after split train/val shape", train_df.shape, val_df.shape)
 ```
 before split train shape (17500, 2)
+
 after split train/val shape (14000, 2) (3500, 2)
 
 ### prepare data for modeling
@@ -103,11 +104,15 @@ val_generator = val_datagen.flow_from_dataframe(dataframe=val_df,
 ```
 
 Found 14000 validated image filenames belonging to 2 classes.
+
 Found 3500 validated image filenames belonging to 2 classes.
 
 
 ### creating a CNN model from scratch
-We will be creatign a simple Convolutional Neural Networks(CNN) model using keras layers and its function API for Models. We will be using Adam (with its default lr=0.001)as the optimizer,  'binary_crossentropy' as loss and 'AUC' as metrics.
+Creating a model from scratch may not be a good idea always. There aren't much samples available all the time for us to fully exploit(converge) a complex model without overfitting. Someone might have worked on a similar problem and might have trained a huge model for multiple epochs and done a finetunig and later opensourced the weights of that model. So, it's a good idea to create a model from scratch and use it as a base model and then use a pretrained model to get better on the measure of success.
+
+We will be creatign a simple Convolutional Neural Networks(CNN) model using keras layers and its `functional API for Models`. We will be using `Adam` (with its default `learningRate=0.001`)as the optimizer,  `binary_crossentropy` as loss and `AUC` as metrics. For `Callbacks` we have used `LearningRateScheduler` for learning rate decay and `EarlyStopping` in case the `val_loss` doesn't improve. Running it for 20 epochs should be a good start. 
+
 ```
 inputs = Input(shape=(*target_size, 3))
 
@@ -139,8 +144,6 @@ model.compile(optimizer='adam',
 
 
 ### visualize learning curve
-### use pretrained model
-### visualize learning curve
 A very useful piece of code to visualize the learnign curves.
 ```
 acc = history.history['accuracy']
@@ -168,6 +171,14 @@ plt.title('Training and Validation Loss')
 plt.xlabel('epoch')
 plt.show()
 ```
+
+
+### use pretrained model
+
+### visualize learning curve again
+
+
+
 ### prediction on test data
 
 ## Learnings
