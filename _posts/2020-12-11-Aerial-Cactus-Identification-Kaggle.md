@@ -1,5 +1,3 @@
-**work in progress**
-
 ![nn]({{ '/images/2020-12-11-cactus.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
 *[credits](https://unsplash.com/photos/3guU1kCxxy0)*
@@ -11,7 +9,7 @@
 ---
 Hello World !!! 
 
-In my quest of learning **`Computer vision`** I am starting with small datasets and lesser complex problems.So, today I am trying my hands on a kaggle problem which is basically an **`Image Classification`** problem from [Kaggle](https://www.kaggle.com/c/aerial-cactus-identification/)
+In my quest of learning **`Computer vision`** I am starting with small datasets and less complex problems. So, today I am trying my hands on a kaggle problem which is basically an **`Image Classification`** problem from [Kaggle](https://www.kaggle.com/c/aerial-cactus-identification/)
 
 ## Description
 To assess the impact of climate change on Earth's flora and fauna, it is vital to quantify how human activities such as logging, mining, and agriculture are impacting our protected natural areas. Researchers in Mexico have created the VIGIA project, which aims to build a system for autonomous surveillance of protected areas. A first step in such an effort is the ability to recognize the vegetation inside the protected areas. In this competition, you are tasked with creation of an algorithm that can identify a specific type of cactus in aerial imagery.
@@ -33,7 +31,27 @@ Files
 
 
 ## Approach
+We will not be using any pretrained model this time and will rather create a model from scratch for learning purpose. 
+```
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn, gc, time, os, math
 
+from sklearn.model_selection import train_test_split
+
+import tensorflow as tf
+print(tf.__version__)
+
+from tensorflow.keras.preprocessing.image import load_img, ImageDataGenerator
+
+seed = 42
+np.random.seed(seed)
+tf.random.set_seed(seed)
+
+```
+2.3.0
 ### load the data
 We have been given two folders for train and test images which contain images for both positive and negative classes. First we load the `.csv` file which has the IDs of images and their labels.
 
@@ -85,7 +103,6 @@ batch_size = 32
 
 train_datagen = ImageDataGenerator(rescale=1./255)
 val_datagen = ImageDataGenerator(rescale=1./255)
-test_datagen = ImageDataGenerator(rescale=1./255)
 
 train_generator = train_datagen.flow_from_dataframe(dataframe=train_df,
                                                    directory=train_dir,
@@ -103,6 +120,7 @@ val_generator = val_datagen.flow_from_dataframe(dataframe=val_df,
                                                     class_mode='binary',
                                                    batch_size=batch_size,
                                                    seed = seed)
+
 ```
 
 Found 14000 validated image filenames belonging to 2 classes.
@@ -111,9 +129,9 @@ Found 3500 validated image filenames belonging to 2 classes.
 
 
 ### creating a CNN model from scratch
-Creating a model from scratch may not be a good idea always. There aren't much samples available all the time for us to fully exploit(converge) a complex model without overfitting. Someone might have worked on a similar problem and might have trained a huge model for multiple epochs and done a finetunig and later opensourced the weights of that model. So, it's a good idea to create a model from scratch and use it as a base model and then use a pretrained model to get better on the measure of success.
+Creating a model from scratch may not be a good idea always. There aren't much samples available all the time for us to fully exploit(converge) a complex model without overfitting. Someone (maybe a research institute, tech giants etc.) might have worked on a similar problem and might have trained a huge model for multiple epochs and done a finetunig and later open-sourced the weights of that model. So, it's a good idea to create a model from scratch and use it as a base model and then use a pretrained model to get better on the measure of success.
 
-We will be creatign a simple Convolutional Neural Networks(CNN) model using keras layers and its `functional API for Models`. We will be using `Adam` (with its default `learningRate=0.001`)as the optimizer,  `binary_crossentropy` as loss and `AUC` as metrics. For `Callbacks` we have used `LearningRateScheduler` for learning rate decay and `EarlyStopping` in case the `val_loss` doesn't improve. Running it for 20 epochs should be a good start. 
+We will be creating a simple Convolutional Neural Networks(CNN) model using keras layers and its `functional API for Models`. We will be using `Adam` (with its default `learningRate=0.001`)as the optimizer,  `binary_crossentropy` as loss and `AUC` as metrics. For `Callbacks` we have used `LearningRateScheduler` for learning rate decay and `EarlyStopping` in case the `val_loss` doesn't improve. Running it for 20 epochs should be a good start. 
 
 ```
 inputs = Input(shape=(*target_size, 3))
@@ -142,6 +160,7 @@ model = Model(inputs, outputs)
 model.compile(optimizer='adam',
               loss='binary_crossentropy',
               metrics=['AUC'])
+model.summary()
 ```
 
 
@@ -175,20 +194,30 @@ plt.show()
 ```
 
 
-### use pretrained model
-
-### visualize learning curve again
-
-
-
 ### prediction on test data
+```
+test_df = pd.read_csv("sample_submission.csv")
+test_dir = '/cp/kaggle/aerial-cactus-identification/test'
 
+test_datagen = ImageDataGenerator(rescale=1./255)
+test_generator = test_datagen.flow_from_directory(directory=test_dir,
+                                 target_size=target_size,
+                                 class_mode='binary',
+                                 batch_size=1,
+                                 shuffle=False,
+                                 seed=seed)
+```
+Found 4000 images belonging to 1 classes.
+```
+# predict on test images
+preds = model.predict(test_generator)
+test_df["has_cactus"] = preds
+```
 ## Learnings
-How to load the data using TensorFLow/Keras from a folder of all images.
+How to load the data using TensorFLow/Keras from a directory of images.
 How to visualise the data.
 How to prepare data for augmentation.
 How to write CNN model from scratch using functional API of keras Model.
-How to load and use pre-trained CNN models for finetuning.
 How to visualize accuracy/loss learnign curves for train/val data.
 
 
