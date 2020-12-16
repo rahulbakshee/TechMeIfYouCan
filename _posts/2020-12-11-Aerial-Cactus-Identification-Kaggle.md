@@ -165,7 +165,7 @@ model.summary()
 
 
 ### visualize learning curve
-A very useful piece of code to visualize the learnign curves.
+A very useful piece of code to visualize the learnign curves from [tensorflow](https://www.tensorflow.org/tutorials/images/transfer_learning#learning_curves)
 ```
 acc = history.history['accuracy']
 val_acc = history.history['val_accuracy']
