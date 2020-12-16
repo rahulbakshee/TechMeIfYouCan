@@ -214,11 +214,11 @@ preds = model.predict(test_generator)
 test_df["has_cactus"] = preds
 ```
 ## Learnings
-How to load the data using TensorFLow/Keras from a directory of images.
-How to visualise the data.
-How to prepare data for augmentation.
-How to write CNN model from scratch using functional API of keras Model.
-How to visualize accuracy/loss learnign curves for train/val data.
+- How to load the data using TensorFLow/Keras from a directory of images.
+- How to visualise the data.
+- How to prepare data for augmentation.
+- How to write CNN model from scratch using functional API of keras Model.
+- How to visualize accuracy/loss learnign curves for train/val data.
 
 
 
