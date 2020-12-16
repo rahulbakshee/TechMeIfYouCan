@@ -11,7 +11,7 @@ Hello World !!!
 
 In my quest of learning **`Computer vision`** I am starting with small datasets and less complex problems. So, today I am trying my hands on a kaggle problem which is basically an **`Image Classification`** problem from [Kaggle](https://www.kaggle.com/c/aerial-cactus-identification/)
 
-pls visit [github](https://github.com/rahulbakshee/cp/blob/master/kaggle/kaggle-Aerial_Cactus_Identification.ipynb) for jupyter notebook
+> pls visit [github](https://github.com/rahulbakshee/cp/blob/master/kaggle/kaggle-Aerial_Cactus_Identification.ipynb) for jupyter notebook
 
 ## Description
 To assess the impact of climate change on Earth's flora and fauna, it is vital to quantify how human activities such as logging, mining, and agriculture are impacting our protected natural areas. Researchers in Mexico have created the VIGIA project, which aims to build a system for autonomous surveillance of protected areas. A first step in such an effort is the ability to recognize the vegetation inside the protected areas. In this competition, you are tasked with creation of an algorithm that can identify a specific type of cactus in aerial imagery.
