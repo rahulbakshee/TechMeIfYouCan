@@ -169,20 +169,20 @@ model.summary()
 ### visualize learning curve
 A very useful piece of code to visualize the learnign curves from [tensorflow](https://www.tensorflow.org/tutorials/images/transfer_learning#learning_curves)
 ```
-acc = history.history['accuracy']
-val_acc = history.history['val_accuracy']
+acc = history.history['auc']
+val_acc = history.history['val_auc']
 
 loss = history.history['loss']
 val_loss = history.history['val_loss']
 
 plt.figure(figsize=(8, 8))
 plt.subplot(2, 1, 1)
-plt.plot(acc, label='Training Accuracy')
-plt.plot(val_acc, label='Validation Accuracy')
+plt.plot(acc, label='Training AUC')
+plt.plot(val_acc, label='Validation AUC')
 plt.legend(loc='lower right')
-plt.ylabel('Accuracy')
+plt.ylabel('AUC')
 plt.ylim([min(plt.ylim()),1])
-plt.title('Training and Validation Accuracy')
+plt.title('Training and Validation AUC')
 
 plt.subplot(2, 1, 2)
 plt.plot(loss, label='Training Loss')
@@ -194,7 +194,8 @@ plt.title('Training and Validation Loss')
 plt.xlabel('epoch')
 plt.show()
 ```
-
+![nn]({{ '/images/2020-12-11-metrics.png' | relative_url }})
+{: style="width: 600px; max-width: 100%;"}
 
 ### prediction on test data
 ```
