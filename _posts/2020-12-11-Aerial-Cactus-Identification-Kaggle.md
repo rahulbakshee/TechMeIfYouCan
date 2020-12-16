@@ -11,6 +11,8 @@ Hello World !!!
 
 In my quest of learning **`Computer vision`** I am starting with small datasets and less complex problems. So, today I am trying my hands on a kaggle problem which is basically an **`Image Classification`** problem from [Kaggle](https://www.kaggle.com/c/aerial-cactus-identification/)
 
+pls visit [github](https://github.com/rahulbakshee/cp/blob/master/kaggle/kaggle-Aerial_Cactus_Identification.ipynb) for jupyter notebook
+
 ## Description
 To assess the impact of climate change on Earth's flora and fauna, it is vital to quantify how human activities such as logging, mining, and agriculture are impacting our protected natural areas. Researchers in Mexico have created the VIGIA project, which aims to build a system for autonomous surveillance of protected areas. A first step in such an effort is the ability to recognize the vegetation inside the protected areas. In this competition, you are tasked with creation of an algorithm that can identify a specific type of cactus in aerial imagery.
 
@@ -56,7 +58,7 @@ tf.random.set_seed(seed)
 We have been given two folders for train and test images which contain images for both positive and negative classes. First we load the `.csv` file which has the IDs of images and their labels.
 
 ### visualize the data
-The first thing to do in Machine Learning is to understand the data yourself before fitting any model. It is better to understand the data and have a good intuition about the features(e.g. in case of tabular data) which may help in curve fitting and later interpreting the model. In our case we will pick randomly few samples and see the distribution of positive(image has catus) and negative(image does not have cactus) classes.
+The first thing to do in Machine Learning is to understand the data yourself before fitting any model. It is better to understand the data and have a good intuition about the features(e.g. in case of tabular data) which may help in curve fitting and later interpreting the model. In our case we will pick randomly few samples and see the distribution of positive(image has cactus) and negative(image does not have cactus) classes.
 
 ```
 fig,ax = plt.subplots(2,5, figsize=(10,7))
@@ -129,7 +131,7 @@ Found 3500 validated image filenames belonging to 2 classes.
 
 
 ### creating a CNN model from scratch
-Creating a model from scratch may not be a good idea always. There aren't much samples available all the time for us to fully exploit(converge) a complex model without overfitting. Someone (maybe a research institute, tech giants etc.) might have worked on a similar problem and might have trained a huge model for multiple epochs and done a finetunig and later open-sourced the weights of that model. So, it's a good idea to create a model from scratch and use it as a base model and then use a pretrained model to get better on the measure of success.
+Creating a model from scratch may not be a good idea always. There aren't much samples available all the time for us to fully exploit(converge) a complex model without overfitting. Someone (maybe a research institute, tech giants etc.) might have worked on a similar problem and might have trained a huge model for multiple epochs and done a finetuning and later open-sourced the weights of that model. So, it's a good idea to create a model from scratch and use it as a base model and then use a pretrained model to get better on the measure of success.
 
 We will be creating a simple Convolutional Neural Networks(CNN) model using keras layers and its `functional API for Models`. We will be using `Adam` (with its default `learningRate=0.001`)as the optimizer,  `binary_crossentropy` as loss and `AUC` as metrics. For `Callbacks` we have used `LearningRateScheduler` for learning rate decay and `EarlyStopping` in case the `val_loss` doesn't improve. Running it for 20 epochs should be a good start. 
 
@@ -215,10 +217,10 @@ test_df["has_cactus"] = preds
 ```
 ## Learnings
 - How to load the data using TensorFLow/Keras from a directory of images.
-- How to visualise the data.
+- How to visualize the data.
 - How to prepare data for augmentation.
 - How to write CNN model from scratch using functional API of keras Model.
-- How to visualize accuracy/loss learnign curves for train/val data.
+- How to visualize accuracy/loss learning curves for train/val data.
 
 
 
