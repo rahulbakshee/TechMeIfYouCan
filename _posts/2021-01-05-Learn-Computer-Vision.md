@@ -28,4 +28,4 @@ Part 4: High Level Vision (Features > Analysis)
 - Week 8 (Modern Deep Learning)
 
 
-:+1:! Happy :heart: Learning !!!
+Happy Learning !!!
