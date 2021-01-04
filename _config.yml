@@ -32,6 +32,7 @@ plugins:
   - jekyll-feed
   - jekyll-archives
   - jekyll-sitemap
+  - jemoji
 
 # titles_from_headings:
 #  enabled:     true
