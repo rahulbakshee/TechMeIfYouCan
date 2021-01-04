@@ -18,7 +18,7 @@ group :jekyll_plugins do
 end
 
 gem "jekyll-github-metadata"
-
+gem 'jemoji'
 gem 'jekyll-seo-tag'
 gem 'jekyll-sitemap'
 
