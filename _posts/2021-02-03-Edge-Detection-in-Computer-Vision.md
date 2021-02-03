@@ -17,3 +17,16 @@ import cv2
 import matplotlib.pyplot as plt
 %matplotlib inline
 ```
+> **It is a multi-stage algorithm** :
+
+### Step 1: Noise reduction using Gaussian blur :
+    A Gaussian filter is convolved over the image to remove noise and to prevent the assumption of noise as edges. The sudden change of intensity of pixels should not be considered as an edge therefore it is vital to first treat the input image with smoothing.
+
+```
+A typical Gaussian filter: 
+                        [[2,  4,   5,  4,  2],
+                        [ 4,  9,  12,  9,  4],
+              (1 / 159).[ 5, 12,  15, 12,  5],
+                        [ 4,  9,  12,  9,  4],
+                        [ 2,  4,   5,  4,  2]]
+```
