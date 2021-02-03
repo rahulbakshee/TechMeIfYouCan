@@ -123,7 +123,7 @@ This stage decides which are all edges are really edges and which are not. For t
 ```
 img = cv2.imread("noctua.jpg", 0)
 # detect edges 
-canny = cv2.Canny(img, 100,200)
+canny = cv2.Canny(img,30,100)
 
 f, (ax1, ax2) = plt.subplots(1,2)
 ax1.imshow(img, cmap='gray')
