@@ -45,7 +45,7 @@ ax1.title.set_text("Original image")
 ax2.imshow(blurred,cmap='gray')
 ax2.title.set_text("after Gaussian blur")
 ```
-![gaussian blur]({{ '/images/2021-02-03-gaussian_blur.png' | relative_url }})
+![gaussian blur]({{ '/images/2021-02-03-flower.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
 
 ### Step 2: Finding Gradients:
