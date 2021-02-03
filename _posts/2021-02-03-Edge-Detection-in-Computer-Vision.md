@@ -134,7 +134,6 @@ ax2.title.set_text("Edges detected")
 ![noctua]({{ '/images/2021-02-03-noctua.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
 
-
 ### references:
 
 - https://en.wikipedia.org/wiki/Canny_edge_detector
