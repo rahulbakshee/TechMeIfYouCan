@@ -71,7 +71,7 @@ Along Y direction Ky:  [[1, 2, 1],
 gradient magnitude = sqrt(Gx^2 + Gy^2)
 angle = arctan(|Gy| / |Gx|)
 ```
-> example showing how to find gradients using Sobel operators
+#### example showing how to find gradients using Sobel operators
 
 ```
 # input image
@@ -89,3 +89,31 @@ ax3.imshow(sobely, cmap='gray')
 ax3.title.set_text("Sobel filter along Y axis")
 
 ```
+
+![sobel]({{ '/images/2021-02-03-sobelxy.png' | relative_url }})
+{: style="width: 600px; max-width: 100%;"}
+
+
+
+### Step 3: Non-max supression:
+
+Non-maximum suppression is applied to find the locations with the sharpest change of intensity value. The algorithm for each pixel in the gradient image is:
+
+  1) Round the gradient direction θ to nearest 45 degree, corresponding to the use of an 8-connected neighbourhood.
+
+  2) Compare the edge strength of the current pixel with the edge strength of the pixel in the positive and negative gradient directions.
+
+  3) If the edge strength of the current pixel is the largest compared to the other pixels in the mask with the same direction (e.g., a pixel that is pointing in the y-direction will be compared to the pixel above and below it in the vertical axis), the value will be preserved. Otherwise, the value will be suppressed.
+
+
+### Step 4: Double Thresholding
+
+
+The edge-pixels remaining after the non-maximum suppression step are (still) marked with their strength pixel-by-pixel. Many of these will probably be true edges in the image, but some may be caused by noise or color variations for instance due to rough surfaces. The simplest way to discern between these would be to use a threshold, so that only edges stronger that a certain value would be preserved. The Canny edge detection algorithm uses double thresholding. Edge pixels stronger than the high threshold are marked as strong; edge pixels weaker than the low threshold are suppressed and edge pixels between the two thresholds are marked as weak
+Step 5: Edge tracking by hysteresis
+This stage decides which are all edges are really edges and which are not. For this, we need two threshold values, minVal and maxVal. Any edges with intensity gradient more than maxVal are sure to be edges and those below minVal are sure to be non-edges, so discarded. Those who lie between these two thresholds are classified edges or non-edges based on their connectivity. If they are connected to “sure-edge” pixels, they are considered to be part of edges. Otherwise, they are also discarded.
+
+
+
+
+
