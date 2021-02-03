@@ -121,7 +121,7 @@ This stage decides which are all edges are really edges and which are not. For t
 > openCV has a nice implementation cv2.Canny() which wraps all these steps into one function
 
 ```
-img = cv2.imread("city.jpg", 0)
+img = cv2.imread("noctua.jpg", 0)
 # detect edges 
 canny = cv2.Canny(img, 100,200)
 
@@ -131,6 +131,9 @@ ax1.title.set_text("Original image")
 ax2.imshow(canny, cmap='gray')
 ax2.title.set_text("Edges detected")
 ```
+![noctua]({{ '/images/2021-02-03-noctua.png' | relative_url }})
+{: style="width: 600px; max-width: 100%;"}
+
 
 ### references:
 
