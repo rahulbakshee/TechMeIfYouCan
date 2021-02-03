@@ -34,7 +34,7 @@ A typical Gaussian filter:
 
 ```
 # input image
-img = cv2.imread("plant2.jpg", 0)
+img = cv2.imread("flower.jpg", 0)
 
 # gaussian smoothing
 blurred=cv2.GaussianBlur(img,(5, 5),1.4) 
