@@ -11,9 +11,9 @@ Edge detection is a basic but important task in Computer Vision. It is usually d
 Although there are a lot of algorithms for edge detection, today we are going to discuss Canny Edge Detection algorithm (by John F. Canny in 1986).
 
 
-`
+```
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 %matplotlib inline
-`
+```
