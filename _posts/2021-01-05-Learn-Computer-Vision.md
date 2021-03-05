@@ -5,11 +5,9 @@
 ---
 Hello World !!! 
 
-This is the curriculum by Siraj Raval on [Youtube](https://youtu.be/FSe_02FpJas) that I am following right now to learn Computer Vision by starting from the basics and then slowly moving on to the complex concepts. 
+This is the curriculum by Siraj Raval that I am following right now to learn Computer Vision by starting from the basics and then slowly moving on to the complex concepts. 
 
-The tools I will be using **`python, numpy, openCV, matplotlib, tensorFlow, pyTorch, keras`** etc.
-
-This is a work in progress and I will be updating jupyter notebooks @[this git repo](https://github.com/rahulbakshee/cv/tree/master/Learn_Computer_Vision)
+The tools I will be using `python, numpy, openCV, matplotlib, tensorFlow, pyTorch, keras` etc.
 
 Part 1: Low Level Vision (image > image)
 - Week 1 ( Basic Image Processing Techniques)
@@ -26,6 +24,9 @@ Part 3: Multiple Views
 Part 4: High Level Vision (Features > Analysis)
 - Week 7 (Object Detection & Classification)
 - Week 8 (Modern Deep Learning)
+
+
+This is a work in progress and I will be updating jupyter notebooks @[this git repo](https://github.com/rahulbakshee/cv/tree/master/Learn_Computer_Vision)
 
 
 Happy Learning !!!
