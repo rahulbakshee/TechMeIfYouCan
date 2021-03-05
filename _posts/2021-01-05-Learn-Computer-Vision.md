@@ -26,7 +26,7 @@ Part 4: High Level Vision (Features > Analysis)
 - Week 8 (Modern Deep Learning)
 
 
-This is a work in progress and I will be updating jupyter notebooks @[this git repo](https://github.com/rahulbakshee/cv/tree/master/Learn_Computer_Vision)
+This is a work in progress and I will be updating `jupyter notebooks` **@[this git repo](https://github.com/rahulbakshee/cv/tree/master/Learn_Computer_Vision)**
 
 
 Happy Learning !!!
