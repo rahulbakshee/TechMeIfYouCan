@@ -1,5 +1,5 @@
 ![nn]({{ '/images/2021-12-31-DLS-my-certi.PNG' | relative_url }})
-{: style="width: 600px; max-width: 100%;"}
+{: style="width: 600px; max-width: 100%; align:center"}
 
 ### About this Specialization
 The [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) by [deeplearning.ai](https://www.deeplearning.ai/) is a foundational program that will help you understand the capabilities, challenges, and consequences of deep learning and prepare you to participate in the development of leading-edge AI technology. 
