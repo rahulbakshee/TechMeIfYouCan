@@ -1,6 +1,6 @@
 
 ![nn]({{ '/images/2021-12-31-Specialization-logo.png' | relative_url }})
-{: style="width: 600px; height: 800px; max-width: 300%; align:center; text-align:center"}
+{: style="width: 600px; height: 800px; max-width: 300%; max-height:300%; align:center; text-align:center"}
 
 
 ### About this Specialization
