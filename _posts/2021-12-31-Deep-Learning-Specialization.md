@@ -1,4 +1,4 @@
-![nn]({{ '/images/2021-12-31-Specialization-logo.png' | relative_url }})
+![nn]({{ '/images/2021-12-31-DLS-my-certi.PNG' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
 
 ### About this Specialization
@@ -50,7 +50,8 @@ The Deep Learning Specialization is a foundational program that will help you un
 
 
 
-
+![nn]({{ '/images/2021-12-31-Specialization-logo.png' | relative_url }})
+{: style="width: 600px; max-width: 100%;"}
 
 
 
