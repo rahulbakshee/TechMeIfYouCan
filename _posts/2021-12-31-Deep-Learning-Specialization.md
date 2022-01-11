@@ -1,6 +1,6 @@
 
 ![nn]({{ '/images/2021-12-31-Specialization-logo.png' | relative_url }})
-{: style="width: 600px; max-width: 100%; align:center"}
+{: style="width: 600px; max-width: 100%; align:center; text-align:center"}
 
 
 ### About this Specialization
@@ -50,7 +50,7 @@ By the end, you will be able to build and train Recurrent Neural Networks (RNNs)
 
 The Deep Learning Specialization is a foundational program that will help you understand the capabilities, challenges, and consequences of deep learning and prepare you to participate in the development of leading-edge AI technology. It provides a pathway for you to take the definitive step in the world of AI by helping you gain the knowledge and skills to level up your career.
 
-
+## [My Certificate](https://coursera.org/share/22226263fc46f7a18bd1d154b39ffe45)
 
 ![nn]({{ '/images/2021-12-31-DLS-my-certi.PNG' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
