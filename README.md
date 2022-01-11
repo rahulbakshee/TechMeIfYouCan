@@ -5,3 +5,4 @@ I write about Software, Hardware and Tech in general.
 Visit the [Contact](https://rahulbakshee.github.io/iWriteHere/contact.html) page to know more about me.
 
 ---
+go to [github pages](https://rahulbakshee.github.io/iWriteHere/) 
