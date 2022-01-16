@@ -5,7 +5,7 @@
 * TOC
 {:toc}
 
-Most of the frameworks these days provide easy ways of loading, preprocessing and pipelining of data. Today, we will discuss various ways we can load data off-disc using TensorFlow and Keras. 
+Most of the frameworks these days provide easy ways of loading, preprocessing and pipelining of data. Today, we will discuss various ways we can load data using TensorFlow and Keras. This is the first step followed by `data augmentation` and `preprocessing`.
 
 First we download the raw data from given URL.
 ```
@@ -16,6 +16,9 @@ data_dir = tf.keras.utils.get_file(origin=dataset_url,
                                    fname='flower_photos',
                                    untar=True)
 data_dir = pathlib.Path(data_dir)
+
+# total number of images
+image_count = len(list(data_dir.glob('*/*.jpg')))
 ```
 
 # 1. image_dataset_from_directory
@@ -79,17 +82,6 @@ import tensorflow as tf
 img_height, img_width = 150, 150
 AUTOTUNE = tf.data.AUTOTUNE
 
-# download raw data
-import pathlib
-dataset_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
-data_dir = tf.keras.utils.get_file(origin=dataset_url,
-                                   fname='flower_photos',
-                                   untar=True)
-data_dir = pathlib.Path(data_dir)
-
-# total number of images
-image_count = len(list(data_dir.glob('*/*.jpg')))
-
 list_ds = tf.data.Dataset.list_files(str(data_dir/'*/*'), shuffle=False)
 
 val_size = int(image_count * 0.2)
@@ -138,12 +130,22 @@ TensorFlow provides a large [catalog](https://www.tensorflow.org/datasets/catalo
 
 
 ```
+import tensorflow as tf
+import tensorflow_datasets as tfds
 
+(train_ds, val_ds), info = tfds.load(
+                                    'tf_flowers',
+                                    split=['train[:80%]', 'train[80%:]'],
+                                    with_info=True,
+                                    as_supervised=True,
+                                    )
 
 ```
+This is the easiest of all but has limited(but growing) number of datasets.
 
+Now it may happen that raw data is not according to the directory-format expected by above APIs. So, to rearrange the data according to our needs, we can use python modules such as `shutils` etc. and then feed it to TensorFlow APIs.
 
-
+That's it for today. Today we discussed how to load data using TensorFlow and Keras. I will be back with next steps as to how to do `augmentation` and feed to it `Model`.
 
 
 References:
