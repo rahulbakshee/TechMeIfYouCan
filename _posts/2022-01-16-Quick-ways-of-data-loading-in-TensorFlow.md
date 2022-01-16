@@ -145,8 +145,10 @@ This is the easiest of all but has limited(but growing) number of datasets.
 
 Now it may happen that raw data is not according to the directory-format expected by above APIs. So, to rearrange the data according to our needs, we can use python modules such as `shutils` etc. and then feed it to TensorFlow APIs.
 
-That's it for today. Today we discussed how to load data using TensorFlow and Keras. I will be back with next steps as to how to do `augmentation` and feed to it `Model`.
+That's it for today. We discussed how to load data using TensorFlow and Keras. I will be back with next steps as to how to do `augmentation` , `preprocessing` and how to feed input to `Model`.
 
+let us connect on [linkedin](https://www.linkedin.com/in/rahulbakshee/) and [twitter](https://twitter.com/rahulbakshee)
+Read [this article](https://rahulbakshee.github.io/iWriteHere/2022/01/16/Quick-ways-of-data-loading-in-TensorFlow.html) and [other articles](https://rahulbakshee.github.io/iWriteHere/)
 
 References:
 
