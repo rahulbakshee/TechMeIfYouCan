@@ -156,6 +156,7 @@ That's it for today. We discussed how to load data using TensorFlow and Keras. I
 
 let us connect on [linkedin](https://www.linkedin.com/in/rahulbakshee/) and [twitter](https://twitter.com/rahulbakshee)
 
+[linkedin article](https://www.linkedin.com/pulse/quick-ways-data-loading-tensorflow-rahul-bakshee)
 
 Read [this article](https://rahulbakshee.github.io/iWriteHere/2022/01/16/Quick-ways-of-data-loading-in-TensorFlow.html) and [other articles](https://rahulbakshee.github.io/iWriteHere/) on `Machine Learning, Deep Learning and Computer Vision`.
 
