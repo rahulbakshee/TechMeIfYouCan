@@ -1,10 +1,6 @@
 ![nn]({{ '/images/2022-01-16-tf_logo.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
 
-{: class="table-of-content"}
-* TOC
-{:toc}
-
 Most of the frameworks these days provide easy ways of loading, preprocessing and pipelining of data. Today, we will discuss various ways we can load data using TensorFlow and Keras. This is the first step followed by `data augmentation` and `preprocessing`.
 
 # 1. image_dataset_from_directory
