@@ -8,8 +8,7 @@
 Most of the frameworks these days provide easy ways of loading, preprocessing and pipelining of data. Today, we will discuss various ways we can load data off-disc using TensorFlow and Keras. 
 
 # 1. `image_dataset_from_directory` 
-### A high-level Keras preprocessing utility to read a directory of images on disk.
- Data is expected to be in a directory structure where each subdirectory represents a class.
+A high-level Keras preprocessing utility to read a directory of images on disk. Data is expected to be in a directory structure where each subdirectory represents a class.
  
  ```
 main_directory/
@@ -27,7 +26,7 @@ Calling `image_dataset_from_directory(main_directory, labels='inferred')` will r
 In case of more than two subdirectories, the labels will be inferred and start from `0,1,2,3...` as this is a **multi-class classification** problem.
 
 
-> `image_dataset_from_directory` can be utilised via `tf.keras.utils.image_dataset_from_directory` or `tf.keras.preprocessing.image_dataset_from_directory`
+> PRO TIP: found two ways `tf.keras.utils.image_dataset_from_directory` or `tf.keras.preprocessing.image_dataset_from_directory`
 
 ```
 import tensorflow as tf
