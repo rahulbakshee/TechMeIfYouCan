@@ -3,6 +3,8 @@
 
 Most of the frameworks these days provide easy ways of loading, preprocessing and pipelining of data. Today, we will discuss various ways we can load data using TensorFlow and Keras. This is the first step followed by `data augmentation` and `preprocessing`.
 
+> try code yourself at this **[colab](https://colab.research.google.com/drive/1k-MocSgk8OoaNQqtkbsjDLdBCfeJ7kMV?usp=sharing)**
+
 # 1. image_dataset_from_directory
 A high-level Keras preprocessing utility to read a directory of images on disk. Data is expected to be in a directory structure where each subdirectory represents a class.
  
