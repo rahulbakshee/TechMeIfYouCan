@@ -20,9 +20,7 @@ Calling `image_dataset_from_directory(main_directory, labels='inferred')` will r
 In case of more than two subdirectories, the labels will be inferred and start from `0,1,2,3...` as this is a multi-class classification problem.
 
 
-> found two ways for this:
- >tf.keras.utils.image_dataset_from_directory                                      
- > tf.keras.preprocessing.image_dataset_from_directory
+> `image_dataset_from_directory` can be utilisez via `tf.keras.utils.image_dataset_from_directory` or `tf.keras.preprocessing.image_dataset_from_directory`
 
 ```
 import tensorflow as tf
