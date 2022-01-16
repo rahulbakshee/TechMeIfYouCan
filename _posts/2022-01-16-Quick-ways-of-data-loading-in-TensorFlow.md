@@ -139,7 +139,11 @@ import tensorflow_datasets as tfds
                                     with_info=True,
                                     as_supervised=True,
                                     )
+print("Using {} files for training.".format(len(train_ds)))
+print("Using {} files for validation.".format(len(val_ds)))
 
+# Using 2936 files for training.
+# Using 734 files for validation.
 ```
 This is the easiest of all but has limited(but growing) number of datasets.
 
