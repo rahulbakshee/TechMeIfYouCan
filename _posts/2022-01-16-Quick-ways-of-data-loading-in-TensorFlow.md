@@ -17,10 +17,12 @@ main_directory/
 ```
 
 Calling `image_dataset_from_directory(main_directory, labels='inferred')` will return a `tf.data.Dataset` that yields batches of images from the subdirectories `class_a` and  `class_b`, together with labels 0 and 1 (0 corresponding to `class_a` and 1 corresponding to `class_b`).
-In case of more than two subdirectories, the labels will be inferred and start from `0,1,2,3...` as this is a multi-class classification problem.
 
 
-> `image_dataset_from_directory` can be utilisez via `tf.keras.utils.image_dataset_from_directory` or `tf.keras.preprocessing.image_dataset_from_directory`
+In case of more than two subdirectories, the labels will be inferred and start from `0,1,2,3...` as this is a **multi-class classification** problem.
+
+
+> `image_dataset_from_directory` can be utilised via `tf.keras.utils.image_dataset_from_directory` or `tf.keras.preprocessing.image_dataset_from_directory`
 
 ```
 import tensorflow as tf
