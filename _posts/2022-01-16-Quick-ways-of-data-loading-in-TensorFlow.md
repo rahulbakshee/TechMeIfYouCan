@@ -7,6 +7,17 @@
 
 Most of the frameworks these days provide easy ways of loading, preprocessing and pipelining of data. Today, we will discuss various ways we can load data off-disc using TensorFlow and Keras. 
 
+First we download the raw data from given URL.
+```
+# download raw data
+import pathlib
+dataset_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
+data_dir = tf.keras.utils.get_file(origin=dataset_url,
+                                   fname='flower_photos',
+                                   untar=True)
+data_dir = pathlib.Path(data_dir)
+```
+
 # 1. image_dataset_from_directory
 A high-level Keras preprocessing utility to read a directory of images on disk. Data is expected to be in a directory structure where each subdirectory represents a class.
  
@@ -32,14 +43,6 @@ batch_size = 32
 img_height, img_width = 150, 150
 seed = 42
 import tensorflow as tf
-
-# download raw data
-import pathlib
-dataset_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
-data_dir = tf.keras.utils.get_file(origin=dataset_url,
-                                   fname='flower_photos',
-                                   untar=True)
-data_dir = pathlib.Path(data_dir)
 
 # Load data off disc using a Keras utility
 train_ds = tf.keras.utils.image_dataset_from_directory(			
@@ -131,7 +134,13 @@ val_ds = val_ds.map(process_path, num_parallel_calls=AUTOTUNE)
 ```
 
 # 3. tensorflow_datasets 
+TensorFlow provides a large [catalog](https://www.tensorflow.org/datasets/catalog/overview) of easy-to-download datasets. Using `tfds.load` arguments such as `split` we can choose which split to read (e.g. 'train', ['train', 'test'], 'train[80%:]',...)
 
+
+```
+
+
+```
 
 
 
