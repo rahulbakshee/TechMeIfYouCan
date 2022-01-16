@@ -66,7 +66,7 @@ val_ds = tf.keras.utils.image_dataset_from_directory(
 ```
 
 # 2. tf.data
-For finer control, we can write our own pipeline using `tf.data`. 
+An API for input pipelines for finer control, where we can write our own pipeline using `tf.data` . We will create dataset by passing the directory and its contents to `tf.data.Dataset.list_files`. Here `list_files` expects glob patterns to be matched.
 
 ```
 import os
@@ -129,6 +129,13 @@ val_ds = val_ds.map(process_path, num_parallel_calls=AUTOTUNE)
 # Using 734 files for validation.
 
 ```
+
+# 3. tensorflow_datasets 
+
+
+
+
+
 
 References:
 
