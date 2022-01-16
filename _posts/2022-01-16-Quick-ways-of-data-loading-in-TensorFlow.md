@@ -1,9 +1,13 @@
 ![nn]({{ '/images/2022-01-16-tf_logo.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
 
+{: class="table-of-content"}
+* TOC
+{:toc}
+
 Most of the frameworks these days provide easy ways of loading, preprocessing and pipelining of data. Today, we will discuss various ways we can load data off-disc using TensorFlow and Keras. 
 
-# 1. A high-level Keras preprocessing utility to read a directory of images on disk.
+# 1. `image_dataset_from_directory` A high-level Keras preprocessing utility to read a directory of images on disk.
  Data is expected to be in a directory structure where each subdirectory represents a class.
  
  ```
