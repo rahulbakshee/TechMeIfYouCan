@@ -7,20 +7,6 @@
 
 Most of the frameworks these days provide easy ways of loading, preprocessing and pipelining of data. Today, we will discuss various ways we can load data using TensorFlow and Keras. This is the first step followed by `data augmentation` and `preprocessing`.
 
-First we download the raw data from given URL.
-```
-# download raw data
-import pathlib
-dataset_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
-data_dir = tf.keras.utils.get_file(origin=dataset_url,
-                                   fname='flower_photos',
-                                   untar=True)
-data_dir = pathlib.Path(data_dir)
-
-# total number of images
-image_count = len(list(data_dir.glob('*/*.jpg')))
-```
-
 # 1. image_dataset_from_directory
 A high-level Keras preprocessing utility to read a directory of images on disk. Data is expected to be in a directory structure where each subdirectory represents a class.
  
@@ -47,6 +33,14 @@ img_height, img_width = 150, 150
 seed = 42
 import tensorflow as tf
 
+# download raw data
+import pathlib
+dataset_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
+data_dir = tf.keras.utils.get_file(origin=dataset_url,
+                                   fname='flower_photos',
+                                   untar=True)
+data_dir = pathlib.Path(data_dir)
+
 # Load data off disc using a Keras utility
 train_ds = tf.keras.utils.image_dataset_from_directory(			
                             data_dir,
@@ -63,6 +57,7 @@ val_ds = tf.keras.utils.image_dataset_from_directory(
                             seed=seed,
                             image_size=(img_height, img_width),
                             batch_size=batch_size)
+
 
 # Found 3670 files belonging to 5 classes.
 # Using 2936 files for training.
@@ -81,6 +76,17 @@ import tensorflow as tf
 
 img_height, img_width = 150, 150
 AUTOTUNE = tf.data.AUTOTUNE
+
+# download raw data
+import pathlib
+dataset_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
+data_dir = tf.keras.utils.get_file(origin=dataset_url,
+                                   fname='flower_photos',
+                                   untar=True)
+data_dir = pathlib.Path(data_dir)
+
+# total number of images
+image_count = len(list(data_dir.glob('*/*.jpg')))
 
 list_ds = tf.data.Dataset.list_files(str(data_dir/'*/*'), shuffle=False)
 
@@ -139,6 +145,7 @@ import tensorflow_datasets as tfds
                                     with_info=True,
                                     as_supervised=True,
                                     )
+
 print("Using {} files for training.".format(len(train_ds)))
 print("Using {} files for validation.".format(len(val_ds)))
 
