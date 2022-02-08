@@ -3,7 +3,7 @@
 
 Converting an 🚀 interview into an offer is a long process. While it may involve various rounds of discussions, we are often given take-home assignments to test our skills on a near real world problem in the preliminary rounds. Although it's a very good way to judge a candidate's proficiency in solving a problem, it may be time consuming and sometimes very frustrating when no feedback is given after hours of hard work.
 
-But anyway, in this Deep Learning Interview process, we 🤓 are given a food classification dataset which has 101 classes. **[Source](https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/)** . We need to analyze and preprocess the dataset as well as build deep learning models for performing food classification. We are free to choose any Deep Learning framework out there.
+But anyway, in this Deep Learning Interview process, we 🤓 are given a food classification dataset which has 101 classes. **[Source](https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/)** . We need to analyze and preprocess the dataset as well as build deep learning models for performing food classification. We are free to choose any Deep Learning framework out there. We will use **TensorFlow** for this excercise.
 
 As this dataset is already present at `tensorflow_datasets` and can be easily downloaded as a [tfds](https://www.tensorflow.org/datasets/catalog/food101) . But, we will download raw data and then preprocess it according to our needs to showcase technical skills as real world data may come in any shape and size.
 
@@ -18,7 +18,7 @@ Follow the code here 😀 **[google colab](https://colab.research.google.com/dri
 
 
 
-Let's go deeper Food Lovers or should I say *Deep Food Lovers* 
+Let's go deeper Food Lovers or should I say *Deep Food Lovers*  😋
 
 # 1. download the data
 We download raw data from source and unzip it.
@@ -178,7 +178,7 @@ for image, _ in train_dataset.take(1):
         plt.axis('off')
 
 ```
-![nn]({{ '/images/2022-02-08-freeze.png' | relative_url }})
+![nn]({{ '/images/2022-02-08-augmented.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
 
 # 8. configure dataset for performance
@@ -232,7 +232,7 @@ history = model.fit(train_dataset,
                     validation_data=val_dataset)
                     
 ```
-If you see loss/val_loss still improving, you should try to add more epochs to training
+If you see loss/val_loss still improving, you should try to add more epochs to training.
 
 
 Plot the loss and accuracy curves
@@ -278,7 +278,7 @@ history_frame = pd.DataFrame(history.history)
 history_frame.loc[:, ['loss', 'val_loss']].plot()
 history_frame.loc[:, ['accuracy', 'val_accuracy']].plot()
 ```
-![nn]({{ '/images/2022-02-08-freeze.png' | relative_url }})
+![nn]({{ '/images/2022-02-08-unfreeze.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
  
  
@@ -306,11 +306,11 @@ label = gr.outputs.Label(num_top_classes=3)
 
 gr.Interface(fn=classify_image, inputs=image, outputs=label, interpretation="default").launch(debug=True)
 ```
-![nn]({{ '/images/2022-02-08-freeze.png' | relative_url }})
+![nn]({{ '/images/2022-02-08-gradio-results.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
  
 # 14. Conclusion
-The reason for low Train/Test accuracy is **to avoid google colab crashing** . Adding more compute power 🤑 (**colab pro**) would definitely help to prototype/train faster. 
+The reason for low Train/Test accuracy and low confidence score while prediction is because I had to take necessary measures **to avoid google colab crashing** . 
 
 I used all of the Images and classes(101) and therefore had to reduce the image size to 200x200 to avoid crashing of colab.
 
@@ -327,7 +327,9 @@ I ran this using **GPU** but one can experiment using **TPU** also.
 One can also try to unfreeze whole pretrained model and try to train it with very low learning rate.
 
 Trying different optimizers and callbacks(learning rate schedulers, early stopping etc.) might help improve metrics and run time.
- 
+
+Adding more compute power 🤑 (**colab pro**) would definitely help to prototype/train faster. 
+
 Thanks for reading till the end. I hope you learnt something. 🤗 
 [linkedin post]()
 
