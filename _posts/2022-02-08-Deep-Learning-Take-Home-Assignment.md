@@ -16,9 +16,13 @@ Bonus: You may get extra points for *Deployment*
 
 connect with me at-
 [blog/github pages](https://rahulbakshee.github.io/iWriteHere/)
+
 [linkedin](https://www.linkedin.com/in/rahulbakshee/)
+
 [twitter](https://twitter.com/rahulbakshee)
+
 [github](https://github.com/rahulbakshee)
+
 
 
 Let's go deeper Food Lovers or should I say **Deep Food Lovers** :grinning:
@@ -31,7 +35,6 @@ We download raw data from source and unzip it.
 
 # unzip the data
 !tar xzf food-101.tar.gz #add v for verbose #xvzf
-
 ```
 Some data sources are provided with metadata.
 
@@ -52,7 +55,6 @@ pec/
         test.txt
         train.json
         train.txt
-
 ```
  
 # 2. Create train and test subdirectories
@@ -75,7 +77,6 @@ def create_train_test(folder):
         for f in tqdm(file) :
             shutil.move(src=base_dir+"images/" + f[:-1]+ ".jpg", 
                         dst=base_dir+folder+"/" + f[:-1]+ ".jpg" )
-
 ```
  
 # 3. List number of samples in training and testing folders.
@@ -124,7 +125,7 @@ def display_images(folder):
 # display_images(folder="test")
 ```
 
-# 5. create the train, val, test datasets out of train and test
+# 5. create the train, val, test datasets out of train and test subdirectories
 Create train, val and test datasets for model fitting, validation and inference
 
 ```
@@ -160,6 +161,8 @@ test_dataset = image_dataset_from_directory(os.path.join(base_dir,"test"),
 # 6. augment the data
 Data Augmentation is allowing random manipulations to the input data for training so as to avoid overfitting and giving our model enough variations to generalize well on unseen test data.
 
+Adding a few layers at the start of input pipeline should do the job.
+
 ```
 # craete a tensorflow layer for augmentation
 data_augmentation = tf.keras.models.Sequential([
@@ -193,7 +196,7 @@ test_dataset = test_dataset.prefetch(buffer_size=AUTOTUNE)
 ```
 
 # 9. load pretrained model for transfer learning
-We will use **InceptionV3** as pretrained model with `imagenet` weights and without the final layers.
+We will use `InceptionV3` as pretrained model with `imagenet` weights and without the final layer. For now we will freeze all the layers and train only the final Dense layer.
 ```
 # Create the base model from the pre-trained model
 base_model = tf.keras.applications.inception_v3.InceptionV3(
@@ -225,49 +228,8 @@ model = tf.keras.models.Model(inputs, outputs)
 print(model.summary())
 ```
 
+Time to compile and run the model.
 ```
-Model: "model"
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- input_2 (InputLayer)        [(None, 200, 200, 3)]     0         
-                                                                 
- sequential (Sequential)     (None, 200, 200, 3)       0         
-                                                                 
- tf.math.truediv (TFOpLambda  (None, 200, 200, 3)      0         
- )                                                               
-                                                                 
- tf.math.subtract (TFOpLambd  (None, 200, 200, 3)      0         
- a)                                                              
-                                                                 
- inception_v3 (Functional)   (None, 4, 4, 2048)        21802784  
-                                                                 
- global_average_pooling2d (G  (None, 2048)             0         
- lobalAveragePooling2D)                                          
-                                                                 
- dropout (Dropout)           (None, 2048)              0         
-                                                                 
- dense (Dense)               (None, 101)               206949    
-                                                                 
-=================================================================
-Total params: 22,009,733
-Trainable params: 206,949
-Non-trainable params: 21,802,784
-_________________________________________________________________
-
-```
-
-```
-reduceLROnPlateau = tf.keras.callbacks.ReduceLROnPlateau(monitor='val_accuracy',
-                                                        factor=0.1,
-                                                        patience=1,
-                                                        verbose=1)
-earlyStopping = tf.keras.callbacks.EarlyStopping(monitor='val_accuracy',
-                                                 patience=5)
-checkpoint = tf.keras.callbacks.ModelCheckpoint(os.path.join(base_dir,'base_model.h5'),
-                                                        monitor='val_accuracy',
-                                                        save_best_only=True)
-
 # compile the model
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy', 
@@ -276,13 +238,14 @@ model.compile(optimizer='adam',
 # train the model
 history = model.fit(train_dataset,
                     batch_size=BATCH_SIZE,
-                    epochs=INITIAL_EPOCHS,
-                    #callbacks=[reduceLROnPlateau,earlyStopping,checkpoint], 
+                    epochs=INITIAL_EPOCHS, 
                     validation_data=val_dataset)
                     
 ```
-###  if you see loss/val_loss still improving, you should try to add more epochs to training
+If you see loss/val_loss still improving, you should try to add more epochs to training
 
+
+Plot the loss and accuracy curves
  
 ```
 history_frame = pd.DataFrame(history.history)
@@ -306,7 +269,10 @@ This step involves opening our model for modifications based on the new data. We
  
  
  
- 
+[linkedin post]()
+
+Read [other articles](https://rahulbakshee.github.io/iWriteHere/) on `Data Science, Machine Learning, Deep Learning and Computer Vision`.
+
  
  
  
