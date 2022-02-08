@@ -29,12 +29,10 @@ Bonus: You may get extra points for *Deployment*
 
 # README.txt shows how the directory structure
 !cat food-101/README.txt
-
-
 ```
- import required libraries
- ```
- import numpy as np
+import required libraries
+```
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -48,4 +46,84 @@ print("tensorflow version", tf.__version__)
 AUTOTUNE = tf.data.experimental.AUTOTUNE
 tf.config.list_physical_devices('GPU')
 
+```
+```
+base_dir = "food-101/"
+
+os.listdir(base_dir)
+
+# list the number of classes
+labels = []
+
+with open (base_dir+"meta/classes.txt", 'r') as file:
+    for cls in tqdm(file):
+        labels.append(cls[:-1])
+    
+print("[INFO] Total number of classes", len(labels))
+# print(labels)
+
+```
+ 
+ 
+ 
+ 
+ # 2. Create train and test subdirectories
+ 
  ```
+ def create_train_test(folder):
+    """ 
+    creates subfolders for train and test under root dir
+    copies files from subfolders(classes) under "/images" to subfolders of "/train" & "/test
+    
+    """
+
+    # creates subfolders for train and test under root dir
+    for cls in labels:
+        os.makedirs(base_dir + folder + '/' + cls)
+    
+    # copies image files
+    with open (base_dir+"meta/" + folder + ".txt", 'r') as file:
+        for f in tqdm(file) :
+            shutil.move(src=base_dir+"images/" + f[:-1]+ ".jpg", 
+                        dst=base_dir+folder+"/" + f[:-1]+ ".jpg" )
+
+            
+create_train_test(folder="train" )
+print("[INFO] subfolders created for train data")
+create_train_test(folder="test" )
+print("[INFO] subfolders created for test data")
+
+# see the newly created train/test folders
+os.listdir(base_dir)
+
+```
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
