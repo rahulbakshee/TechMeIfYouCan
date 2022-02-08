@@ -11,12 +11,9 @@ Judging criteria would be how to format raw data and put in respective directori
 
 Bonus: You may get extra points for *Deployment*
 
-> follow the code here **[google colab](https://colab.research.google.com/drive/1k-MocSgk8OoaNQqtkbsjDLdBCfeJ7kMV?usp=sharing)**
+Follow the code here **[google colab](https://colab.research.google.com/drive/1k-MocSgk8OoaNQqtkbsjDLdBCfeJ7kMV?usp=sharing)**
 
-
-connect with me at-
-
-
+>connect with me at-
 [blog/github pages](https://rahulbakshee.github.io/iWriteHere/), 
 [linkedin](https://www.linkedin.com/in/rahulbakshee/), 
 [twitter](https://twitter.com/rahulbakshee), 
@@ -184,7 +181,8 @@ for image, _ in train_dataset.take(1):
         plt.axis('off')
 
 ```
-////////////////////////////////add image
+![nn]({{ '/images/2022-02-08-freeze.png' | relative_url }})
+{: style="width: 600px; max-width: 100%;"}
 
 # 8. configure dataset for performance
 TensorFlow provides great ways to optimize your data pipelines by prefetching data and keeping it ready to be used.
@@ -213,7 +211,7 @@ base_model.trainable = False
 ```
  
 # 10. add dense layers on top of pretrained model
-
+Time to compile and run the model.
 ```
 inputs = tf.keras.layers.Input(shape=IMG_SHAPE)
 x = data_augmentation(inputs)
@@ -224,11 +222,7 @@ x = tf.keras.layers.Dropout(0.3)(x)
 outputs = tf.keras.layers.Dense(NUM_CLASSES, activation='softmax')(x)
 
 model = tf.keras.models.Model(inputs, outputs)
-print(model.summary())
-```
 
-Time to compile and run the model.
-```
 # compile the model
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy', 
@@ -257,22 +251,86 @@ history_frame.loc[:, ['accuracy', 'val_accuracy']].plot()
 # 11. fine tuning
 This step involves opening our model for modifications based on the new data. We would mark few of the top layers as "trainable" and try to train the model with lower learning rate than before so that "pretrained" weights don't get modified too much. We only want small updates in the pretrained weights.
 
+```
+# un-freeze the model
+base_model.trainable = True
 
+# Fine-tune from this layer onwards
+fine_tune_at = 250
 
+# Freeze all the layers before the `fine_tune_at` layer
+for layer in base_model.layers[:fine_tune_at]:
+    layer.trainable =  False
+    
+# compile the model
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-5),
+             loss='sparse_categorical_crossentropy', 
+             metrics=['accuracy'])
 
+# train
+history_fine = model.fit(train_dataset,
+                        batch_size=BATCH_SIZE,
+                        epochs= TOTAL_EPOCHS,
+                        validation_data=val_dataset)
+```
+
+Plot the loss and accuracy curves
+ 
+```
+history_frame = pd.DataFrame(history.history)
+history_frame.loc[:, ['loss', 'val_loss']].plot()
+history_frame.loc[:, ['accuracy', 'val_accuracy']].plot()
+```
+![nn]({{ '/images/2022-02-08-freeze.png' | relative_url }})
+{: style="width: 600px; max-width: 100%;"}
  
  
+# 12. evaluate on test dataset
  
+```
+# Evaluation and prediction
+loss, accuracy = model.evaluate(test_dataset)
+print('Test accuracy :', accuracy)
+```
+# 13. deploy to gradio
+
+```
+import gradio as gr
+
+def classify_image(inp):
+  inp = inp.reshape((-1,) + IMG_SHAPE)
+  inp = tf.keras.applications.inception_v3.preprocess_input(inp)
+  prediction = model.predict(inp).flatten()
+  return {labels[i]: float(prediction[i]) for i in range(101)}
+
+image = gr.inputs.Image(shape=IMG_SIZE)
+label = gr.outputs.Label(num_top_classes=3)
+
+gr.Interface(fn=classify_image, inputs=image, outputs=label, interpretation="default").launch(debug=True)
+```
+![nn]({{ '/images/2022-02-08-freeze.png' | relative_url }})
+{: style="width: 600px; max-width: 100%;"}
  
- 
- 
+# 14. Conclusion
+The reason for low Train/Test accuracy is because I used all of the Images and classes(101) So, I experimented and had to reduce the image size to 200x200 to avoid crashing of colab.
+
+I experimented to keep higher batch size also, but had to keep small batch size (32) to avoid colab crashing. One can try to experiment and emeber to tweek the **cache/shuffle/prefetch** accordingly.
+
+Also I ran the experiment for 10 epochs only. As this is a huge dataset, it would be advised to run for more epochs with larger input shape.
+
+Training from scratch would need more compute power, that's why I went ahead with transfer learning, but one can try that also.
+
+Try with different pretrained models.
+
+Adding more compute power (**colab pro**) would definitely help to prototype/train faster 
+
+I ran this using **GPU** but one can experiment using **TPU** also.
+
+One can also try to unfreeze whole pretrained model and try to train it with very low learning rate.
+
+Trying different optimizers and callbacks(learning rate schedulers, early stopping etc.) might help improve metrics and run time.
  
  
 [linkedin post]()
 
 Read [other articles](https://rahulbakshee.github.io/iWriteHere/) on `Data Science, Machine Learning, Deep Learning and Computer Vision`.
-
- 
- 
- 
- 
