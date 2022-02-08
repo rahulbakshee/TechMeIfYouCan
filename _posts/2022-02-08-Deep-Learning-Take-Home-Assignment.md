@@ -13,7 +13,7 @@ Bonus: You may get extra points for *Deployment*
 
 > follow the code here **[google colab](https://colab.research.google.com/drive/1k-MocSgk8OoaNQqtkbsjDLdBCfeJ7kMV?usp=sharing)**
 
-Let's go hands-on Food Lovers or should I say **Deep Food Lovers ** :grinning:
+Let's go hands-on Food Lovers or should I say **Deep Food Lovers** :grinning:
 
 # 1. download the data
 ```
@@ -23,13 +23,67 @@ Let's go hands-on Food Lovers or should I say **Deep Food Lovers ** :grinning:
 # unzip the data
 !tar xzf food-101.tar.gz #add v for verbose #xvzf
 
-!ls food-101
+```
 
+```
 # list all the subdirectories(101 classes of food) under "/images"
 !ls food-101/images
 
+apple_pie	    eggs_benedict	     onion_rings
+baby_back_ribs	    escargots		     oysters
+baklava		    falafel		     pad_thai
+beef_carpaccio	    filet_mignon	     paella
+beef_tartare	    fish_and_chips	     pancakes
+beet_salad	    foie_gras		     panna_cotta
+beignets	    french_fries	     peking_duck
+bibimbap	    french_onion_soup	     pho
+bread_pudding	    french_toast	     pizza
+breakfast_burrito   fried_calamari	     pork_chop
+bruschetta	    fried_rice		     poutine
+caesar_salad	    frozen_yogurt	     prime_rib
+cannoli		    garlic_bread	     pulled_pork_sandwich
+caprese_salad	    gnocchi		     ramen
+carrot_cake	    greek_salad		     ravioli
+ceviche		    grilled_cheese_sandwich  red_velvet_cake
+cheesecake	    grilled_salmon	     risotto
+cheese_plate	    guacamole		     samosa
+chicken_curry	    gyoza		     sashimi
+chicken_quesadilla  hamburger		     scallops
+chicken_wings	    hot_and_sour_soup	     seaweed_salad
+chocolate_cake	    hot_dog		     shrimp_and_grits
+chocolate_mousse    huevos_rancheros	     spaghetti_bolognese
+churros		    hummus		     spaghetti_carbonara
+clam_chowder	    ice_cream		     spring_rolls
+club_sandwich	    lasagna		     steak
+crab_cakes	    lobster_bisque	     strawberry_shortcake
+creme_brulee	    lobster_roll_sandwich    sushi
+croque_madame	    macaroni_and_cheese      tacos
+cup_cakes	    macarons		     takoyaki
+deviled_eggs	    miso_soup		     tiramisu
+donuts		    mussels		     tuna_tartare
+dumplings	    nachos		     waffles
+edamame		    omelette
+```
+
+
+```
 # README.txt shows how the directory structure
 !cat food-101/README.txt
+
+Structure:
+----------
+pec/
+    images/
+        <class_name>/
+            <image_id>.jpg
+    meta/
+        classes.txt
+        labels.txt
+        test.json
+        test.txt
+        train.json
+        train.txt
+
 ```
 ### import required libraries
 ```
@@ -66,10 +120,10 @@ print("[INFO] Total number of classes", len(labels))
 ```
  
  
- # 2. Create train and test subdirectories
+# 2. Create train and test subdirectories
  
- ```
- def create_train_test(folder):
+```
+def create_train_test(folder):
     """ 
     creates subfolders for train and test under root dir
     copies files from subfolders(classes) under "/images" to subfolders of "/train" & "/test
@@ -86,6 +140,11 @@ print("[INFO] Total number of classes", len(labels))
             shutil.move(src=base_dir+"images/" + f[:-1]+ ".jpg", 
                         dst=base_dir+folder+"/" + f[:-1]+ ".jpg" )
 
+            
+create_train_test(folder="train" )
+print("[INFO] subfolders created for train data")
+create_train_test(folder="test" )
+print("[INFO] subfolders created for test data")
             
 create_train_test(folder="train" )
 print("[INFO] subfolders created for train data")
