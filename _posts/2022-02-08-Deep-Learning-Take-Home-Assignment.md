@@ -5,7 +5,7 @@ Converting an 🚀 interview into an offer is a long process. While it may invol
 
 But anyway, in this Deep Learning Interview process, we 🤓 are given a food classification dataset which has 101 classes. **[Source](https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/)** . We need to analyze and preprocess the dataset as well as build deep learning models for performing food classification. We are free to choose any Deep Learning framework out there.
 
-As this dataset is already present at tensorflow_datasets and can be easily downloaded as a tfds as shown https://www.tensorflow.org/datasets/catalog/food101 . But, we will download raw data and then preprocess it according to our needs to showcase technical skills as real world data may come in any shape and size.
+As this dataset is already present at `tensorflow_datasets` and can be easily downloaded as a [tfds](https://www.tensorflow.org/datasets/catalog/food101) . But, we will download raw data and then preprocess it according to our needs to showcase technical skills as real world data may come in any shape and size.
 
 Judging criteria would be how to format raw data and put in respective directories to be able to fed to model, create train-test split, data visualization, data preprocessing, data augmnetation, input pipelines, modeling (transfer learning, fine tuning), validation, metrics visualization, inference etc.
 
@@ -14,10 +14,7 @@ Bonus: You may get extra points for *Deployment*
 Follow the code here 😀 **[google colab](https://colab.research.google.com/drive/1Mb_fb7Lz1Kb9i6x-80EmsNfq-n2wKHI4?usp=sharing)**
 
 >connect with me at- 
-**[blog/github pages](https://rahulbakshee.github.io/iWriteHere/) , 
- [linkedin](https://www.linkedin.com/in/rahulbakshee/) ,  
- [twitter](https://twitter.com/rahulbakshee) ,  
- [github](https://github.com/rahulbakshee)**
+**[blog/github pages](https://rahulbakshee.github.io/iWriteHere/) , [linkedin](https://www.linkedin.com/in/rahulbakshee/) ,  [twitter](https://twitter.com/rahulbakshee) ,  [github](https://github.com/rahulbakshee)**
 
 
 
