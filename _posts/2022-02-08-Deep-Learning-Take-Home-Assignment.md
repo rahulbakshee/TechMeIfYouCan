@@ -15,12 +15,11 @@ Bonus: You may get extra points for *Deployment*
 
 
 connect with me at-
-[blog/github pages](https://rahulbakshee.github.io/iWriteHere/)
 
-[linkedin](https://www.linkedin.com/in/rahulbakshee/)
 
-[twitter](https://twitter.com/rahulbakshee)
-
+[blog/github pages](https://rahulbakshee.github.io/iWriteHere/), 
+[linkedin](https://www.linkedin.com/in/rahulbakshee/), 
+[twitter](https://twitter.com/rahulbakshee), 
 [github](https://github.com/rahulbakshee)
 
 
