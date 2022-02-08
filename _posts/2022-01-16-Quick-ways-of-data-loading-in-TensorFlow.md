@@ -156,6 +156,8 @@ Now it may happen that raw data is not according to the directory-format expecte
 
 That's it for today. We discussed how to load data using TensorFlow and Keras. I will be back with next steps as to how to do `augmentation` , `preprocessing` and how to feed input to `Model`.
 
+For an end-to-end `Deep Learning` flow please visit [github](https://rahulbakshee.github.io/iWriteHere/2022/02/08/Deep-Learning-Take-Home-Assignment.html) 
+
 let us connect on [linkedin](https://www.linkedin.com/in/rahulbakshee/) and [twitter](https://twitter.com/rahulbakshee)
 
 [linkedin article](https://www.linkedin.com/pulse/quick-ways-data-loading-tensorflow-rahul-bakshee)
