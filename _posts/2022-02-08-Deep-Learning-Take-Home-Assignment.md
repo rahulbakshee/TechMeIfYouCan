@@ -11,13 +11,13 @@ Judging criteria would be how to format raw data and put in respective directori
 
 Bonus: You may get extra points for *Deployment*
 
-Follow the code here **[google colab](https://colab.research.google.com/drive/1Mb_fb7Lz1Kb9i6x-80EmsNfq-n2wKHI4?usp=sharing)**
+Follow the code here 😀 **[google colab](https://colab.research.google.com/drive/1Mb_fb7Lz1Kb9i6x-80EmsNfq-n2wKHI4?usp=sharing)**
 
->connect with me at- 😀
-**[blog/github pages](https://rahulbakshee.github.io/iWriteHere/), **
-**[linkedin](https://www.linkedin.com/in/rahulbakshee/), **
-**[twitter](https://twitter.com/rahulbakshee),** 
-**[github](https://github.com/rahulbakshee)**
+>connect with me at- 
+**[blog/github pages](https://rahulbakshee.github.io/iWriteHere/) , 
+ [linkedin](https://www.linkedin.com/in/rahulbakshee/) ,  
+ [twitter](https://twitter.com/rahulbakshee) ,  
+ [github](https://github.com/rahulbakshee)**
 
 
 
@@ -294,6 +294,7 @@ print('Test accuracy :', accuracy)
 ```
 # 13. deploy to gradio
 
+Gradio is the fastest way to demo your machine learning model with a friendly web interface so that anyone can use it, anywhere!
 ```
 import gradio as gr
 
@@ -312,17 +313,17 @@ gr.Interface(fn=classify_image, inputs=image, outputs=label, interpretation="def
 {: style="width: 600px; max-width: 100%;"}
  
 # 14. Conclusion
-The reason for low Train/Test accuracy is because I used all of the Images and classes(101) So, I experimented and had to reduce the image size to 200x200 to avoid crashing of colab.
+The reason for low Train/Test accuracy is **to avoid google colab crashing** . Adding more compute power 🤑 (**colab pro**) would definitely help to prototype/train faster. 
 
-I experimented to keep higher batch size also, but had to keep small batch size (32) to avoid colab crashing. One can try to experiment and emeber to tweek the **cache/shuffle/prefetch** accordingly.
+I used all of the Images and classes(101) and therefore had to reduce the image size to 200x200 to avoid crashing of colab.
+
+I experimented to keep higher batch size also, but had to keep small batch size (32) to avoid colab crashing. One can try to experiment and remeber to tweek the **cache/shuffle/prefetch** accordingly.
 
 Also I ran the experiment for 10 epochs only. As this is a huge dataset, it would be advised to run for more epochs with larger input shape.
 
-Training from scratch would need more compute power, that's why I went ahead with transfer learning, but one can try that also.
+Training from scratch is also a good option as we have good amount of data. But it would need more compute power, that's why I went ahead with transfer learning, but one can try that also.
 
 Try with different pretrained models.
-
-Adding more compute power (**colab pro**) would definitely help to prototype/train faster 
 
 I ran this using **GPU** but one can experiment using **TPU** also.
 
@@ -330,7 +331,7 @@ One can also try to unfreeze whole pretrained model and try to train it with ver
 
 Trying different optimizers and callbacks(learning rate schedulers, early stopping etc.) might help improve metrics and run time.
  
- 
+Thanks for reading till the end. I hope you learnt something. 🤗 
 [linkedin post]()
 
 Read [other articles](https://rahulbakshee.github.io/iWriteHere/) on `Data Science, Machine Learning, Deep Learning and Computer Vision`.
