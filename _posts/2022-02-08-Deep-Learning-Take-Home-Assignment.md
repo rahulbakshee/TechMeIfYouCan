@@ -20,7 +20,7 @@ Follow the code here 😀 **[google colab](https://colab.research.google.com/dri
 
 Let's go deeper Food Lovers or should I say *Deep Food Lovers*  😋
 
-# 1. download the data
+# 1. Download the data
 We download raw data from source and unzip it.
 ```
 # download raw data
@@ -118,7 +118,7 @@ def display_images(folder):
 # display_images(folder="test")
 ```
 
-# 5. create the train, val, test datasets out of train and test subdirectories
+# 5. Create the train, val, test datasets out of train and test subdirectories
 Create train, val and test datasets for model fitting, validation and inference
 
 ```
@@ -147,11 +147,9 @@ test_dataset = image_dataset_from_directory(os.path.join(base_dir,"test"),
                                             image_size=IMG_SIZE,
                                             shuffle=True,
                                             seed=seed)
-
-
 ```
 
-# 6. augment the data
+# 6. Augment the data
 Data Augmentation is allowing random manipulations to the input data for training so as to avoid overfitting and giving our model enough variations to generalize well on unseen test data.
 
 Adding a few layers at the start of input pipeline should do the job.
@@ -176,12 +174,11 @@ for image, _ in train_dataset.take(1):
         augmented_image = data_augmentation(tf.expand_dims(first_image, 0))
         plt.imshow(augmented_image[0] / 255)
         plt.axis('off')
-
 ```
 ![nn]({{ '/images/2022-02-08-augmented.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
 
-# 8. configure dataset for performance
+# 8. Configure dataset for performance
 TensorFlow provides great ways to optimize your data pipelines by prefetching data and keeping it ready to be used.
 ```
 train_dataset = train_dataset.shuffle(500).prefetch(buffer_size=AUTOTUNE)
@@ -189,7 +186,7 @@ val_dataset = val_dataset.prefetch(buffer_size=AUTOTUNE)
 test_dataset = test_dataset.prefetch(buffer_size=AUTOTUNE)
 ```
 
-# 9. load pretrained model for transfer learning
+# 9. Load pretrained model for transfer learning
 We will use `InceptionV3` as pretrained model with `imagenet` weights and without the final layer. For now we will freeze all the layers and train only the final Dense layer.
 ```
 # Create the base model from the pre-trained model
@@ -202,12 +199,9 @@ print("[INFO] Number of layers in the base model ", len(base_model.layers))
 
 # freeze the base model
 base_model.trainable = False
-
-# print the base model summary
-# print(base_model.summary())
 ```
  
-# 10. add dense layers on top of pretrained model
+# 10. Add dense layers on top of pretrained model
 Time to compile and run the model.
 ```
 inputs = tf.keras.layers.Input(shape=IMG_SHAPE)
@@ -245,7 +239,7 @@ history_frame.loc[:, ['accuracy', 'val_accuracy']].plot()
 ![nn]({{ '/images/2022-02-08-freeze.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
 
-# 11. fine tuning
+# 11. Fine tuning
 This step involves opening our model for modifications based on the new data. We would mark few of the top layers as "trainable" and try to train the model with lower learning rate than before so that "pretrained" weights don't get modified too much. We only want small updates in the pretrained weights.
 
 ```
@@ -259,12 +253,12 @@ fine_tune_at = 250
 for layer in base_model.layers[:fine_tune_at]:
     layer.trainable =  False
     
-# compile the model
+# compile the model. Set very low learning rate.
 model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-5),
              loss='sparse_categorical_crossentropy', 
              metrics=['accuracy'])
 
-# train
+# train the model with more epochs
 history_fine = model.fit(train_dataset,
                         batch_size=BATCH_SIZE,
                         epochs= TOTAL_EPOCHS,
@@ -272,24 +266,18 @@ history_fine = model.fit(train_dataset,
 ```
 
 Plot the loss and accuracy curves
- 
-```
-history_frame = pd.DataFrame(history.history)
-history_frame.loc[:, ['loss', 'val_loss']].plot()
-history_frame.loc[:, ['accuracy', 'val_accuracy']].plot()
-```
+
 ![nn]({{ '/images/2022-02-08-unfreeze.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
  
  
-# 12. evaluate on test dataset
+# 12. Evaluate on test dataset
  
 ```
-# Evaluation and prediction
 loss, accuracy = model.evaluate(test_dataset)
 print('Test accuracy :', accuracy)
 ```
-# 13. deploy to gradio
+# 13. Deploy to gradio
 
 Gradio is the fastest way to demo your machine learning model with a friendly web interface so that anyone can use it, anywhere!
 ```
@@ -308,6 +296,8 @@ gr.Interface(fn=classify_image, inputs=image, outputs=label, interpretation="def
 ```
 ![nn]({{ '/images/2022-02-08-gradio-results.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
+
+Model was correctly able to predict the food dish was **Nachos**
  
 # 14. Conclusion
 The reason for low Train/Test accuracy and low confidence score while prediction is because I had to take necessary measures **to avoid google colab crashing** . 
@@ -328,9 +318,10 @@ One can also try to unfreeze whole pretrained model and try to train it with ver
 
 Trying different optimizers and callbacks(learning rate schedulers, early stopping etc.) might help improve metrics and run time.
 
-Adding more compute power 🤑 (**colab pro**) would definitely help to prototype/train faster. 
+Adding more compute power (**colab pro**)🤑 would definitely help to prototype/train faster. 
 
 Thanks for reading till the end. I hope you learnt something. 🤗 
-[linkedin post]()
+
+[linkedin post]() 
 
 Read [other articles](https://rahulbakshee.github.io/iWriteHere/) on `Data Science, Machine Learning, Deep Learning and Computer Vision`.
