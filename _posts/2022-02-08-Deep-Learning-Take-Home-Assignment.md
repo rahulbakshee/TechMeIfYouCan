@@ -12,13 +12,14 @@ Judging criteria would be how to format raw data and put in respective directori
 Bonus: You may get extra points for *Deployment*
 
 > follow the code here **[google colab](https://colab.research.google.com/drive/1k-MocSgk8OoaNQqtkbsjDLdBCfeJ7kMV?usp=sharing)**
-```
+
+
 connect with me at-
-blog- https://rahulbakshee.github.io/iWriteHere/
-linkedin - https://www.linkedin.com/in/rahulbakshee/
-twitter - https://twitter.com/rahulbakshee
-github - https://github.com/rahulbakshee
-```
+[blog/github pages](https://rahulbakshee.github.io/iWriteHere/)
+[linkedin](https://www.linkedin.com/in/rahulbakshee/)
+[twitter](https://twitter.com/rahulbakshee)
+[github](https://github.com/rahulbakshee)
+
 
 Let's go deeper Food Lovers or should I say **Deep Food Lovers** :grinning:
 
@@ -104,7 +105,7 @@ list_and_count_files(folder="test",list_files=False)
 ```
 
 # 4. Plot sample images from training and testing folders.
-
+This function plots images of random classes from subdirectory. 
 ```
 def display_images(folder):
     """
@@ -118,27 +119,14 @@ def display_images(folder):
             img = np.random.choice(os.listdir(base_dir+folder+"/" + lbl))
             ax.imshow(PIL.Image.open(base_dir+folder+"/" + lbl+"/"+img))
             ax.set_title(lbl)
-
-```
-```
+            
 # display_images(folder="train")
 # display_images(folder="test")
 ```
 
-
 # 5. create the train, val, test datasets out of train and test
+Create train, val and test datasets for model fitting, validation and inference
 
-```
-# params
-IMG_SIZE = (200, 200) # keep it low to avoid colab crashing
-IMG_SHAPE = IMG_SIZE + (3,)
-NUM_CLASSES = 101
-BATCH_SIZE = 32
-INITIAL_EPOCHS = 10
-FINE_TUNE_EPOCHS = 10
-TOTAL_EPOCHS = INITIAL_EPOCHS + FINE_TUNE_EPOCHS
-
-```
 ```
 from tensorflow.keras.preprocessing import image_dataset_from_directory
 
@@ -169,8 +157,8 @@ test_dataset = image_dataset_from_directory(os.path.join(base_dir,"test"),
 
 ```
 
-
 # 6. augment the data
+Data Augmentation is allowing random manipulations to the input data for training so as to avoid overfitting and giving our model enough variations to generalize well on unseen test data.
 
 ```
 # craete a tensorflow layer for augmentation
@@ -181,7 +169,7 @@ data_augmentation = tf.keras.models.Sequential([
                                             ])
 ```
 
-# 7. Preview the preprocessed dataset.
+# 7. Preview the augmented dataset.
 
 ```
 for image, _ in train_dataset.take(1):
@@ -197,17 +185,15 @@ for image, _ in train_dataset.take(1):
 ////////////////////////////////add image
 
 # 8. configure dataset for performance
-
+TensorFlow provides great ways to optimize your data pipelines by prefetching data and keeping it ready to be used.
 ```
 train_dataset = train_dataset.shuffle(500).prefetch(buffer_size=AUTOTUNE)
 val_dataset = val_dataset.prefetch(buffer_size=AUTOTUNE)
 test_dataset = test_dataset.prefetch(buffer_size=AUTOTUNE)
 ```
 
- 
- 
 # 9. load pretrained model for transfer learning
- 
+We will use **InceptionV3** as pretrained model with `imagenet` weights and without the final layers.
 ```
 # Create the base model from the pre-trained model
 base_model = tf.keras.applications.inception_v3.InceptionV3(
@@ -225,6 +211,7 @@ base_model.trainable = False
 ```
  
 # 10. add dense layers on top of pretrained model
+
 ```
 inputs = tf.keras.layers.Input(shape=IMG_SHAPE)
 x = data_augmentation(inputs)
