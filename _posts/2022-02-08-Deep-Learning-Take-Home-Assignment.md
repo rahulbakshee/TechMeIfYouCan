@@ -12,6 +12,13 @@ Judging criteria would be how to format raw data and put in respective directori
 Bonus: You may get extra points for *Deployment*
 
 > follow the code here **[google colab](https://colab.research.google.com/drive/1k-MocSgk8OoaNQqtkbsjDLdBCfeJ7kMV?usp=sharing)**
+```
+connect with me at-
+blog- https://rahulbakshee.github.io/iWriteHere/
+linkedin - https://www.linkedin.com/in/rahulbakshee/
+twitter - https://twitter.com/rahulbakshee
+github - https://github.com/rahulbakshee
+```
 
 Let's go hands-on Food Lovers or should I say **Deep Food Lovers** :grinning:
 
@@ -25,10 +32,8 @@ Let's go hands-on Food Lovers or should I say **Deep Food Lovers** :grinning:
 
 ```
 
+### target classes 
 ```
-# list all the subdirectories(101 classes of food) under "/images"
-!ls food-101/images
-
 apple_pie	    eggs_benedict	     onion_rings
 baby_back_ribs	    escargots		     oysters
 baklava		    falafel		     pad_thai
