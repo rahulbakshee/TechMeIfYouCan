@@ -15,10 +15,11 @@ Read this on [linkedin](https://www.linkedin.com/posts/rahulbakshee_deep-learnin
 
 Follow the code here 😀 **[google colab](https://colab.research.google.com/drive/1Mb_fb7Lz1Kb9i6x-80EmsNfq-n2wKHI4?usp=sharing)**
 
->connect with me at- 
 
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
+
+>connect with me at- 
 
 **[blog/github pages](https://rahulbakshee.github.io/iWriteHere/) , [linkedin](https://www.linkedin.com/in/rahulbakshee/) ,  [twitter](https://twitter.com/rahulbakshee) ,  [github](https://github.com/rahulbakshee)**
 
