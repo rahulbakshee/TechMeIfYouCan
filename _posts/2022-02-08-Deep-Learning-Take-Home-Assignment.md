@@ -13,6 +13,7 @@ Bonus: You may get extra points for *Deployment*
 
 > follow the code here **[google colab](https://colab.research.google.com/drive/1k-MocSgk8OoaNQqtkbsjDLdBCfeJ7kMV?usp=sharing)**
 
+Let's go hands-on Food Lovers or should I say **Deep Food Lovers ** :grinning:
 
 # 1. download the data
 ```
@@ -225,14 +226,111 @@ test_dataset = test_dataset.prefetch(buffer_size=AUTOTUNE)
 
  
  
+# 9. load pretrained model for transfer learning
  
+```
+# Create the base model from the pre-trained model
+base_model = tf.keras.applications.inception_v3.InceptionV3(
+                                                        include_top=False, 
+                                                        weights='imagenet', 
+                                                        input_shape=IMG_SHAPE
+                                                            )
+print("[INFO] Number of layers in the base model ", len(base_model.layers))
+
+# freeze the base model
+base_model.trainable = False
+
+# print the base model summary
+# print(base_model.summary())
+```
  
+# 10. add dense layers on top of pretrained model
+```
+inputs = tf.keras.layers.Input(shape=IMG_SHAPE)
+x = data_augmentation(inputs)
+x = tf.keras.applications.inception_v3.preprocess_input(x)
+x = base_model(x, training=False) # training=False needed for batchnorm layer
+x = tf.keras.layers.GlobalAveragePooling2D()(x)
+x = tf.keras.layers.Dropout(0.3)(x)
+outputs = tf.keras.layers.Dense(NUM_CLASSES, activation='softmax')(x)
+
+model = tf.keras.models.Model(inputs, outputs)
+print(model.summary())
+```
+
+```
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_2 (InputLayer)        [(None, 200, 200, 3)]     0         
+                                                                 
+ sequential (Sequential)     (None, 200, 200, 3)       0         
+                                                                 
+ tf.math.truediv (TFOpLambda  (None, 200, 200, 3)      0         
+ )                                                               
+                                                                 
+ tf.math.subtract (TFOpLambd  (None, 200, 200, 3)      0         
+ a)                                                              
+                                                                 
+ inception_v3 (Functional)   (None, 4, 4, 2048)        21802784  
+                                                                 
+ global_average_pooling2d (G  (None, 2048)             0         
+ lobalAveragePooling2D)                                          
+                                                                 
+ dropout (Dropout)           (None, 2048)              0         
+                                                                 
+ dense (Dense)               (None, 101)               206949    
+                                                                 
+=================================================================
+Total params: 22,009,733
+Trainable params: 206,949
+Non-trainable params: 21,802,784
+_________________________________________________________________
+
+```
+
+```
+reduceLROnPlateau = tf.keras.callbacks.ReduceLROnPlateau(monitor='val_accuracy',
+                                                        factor=0.1,
+                                                        patience=1,
+                                                        verbose=1)
+earlyStopping = tf.keras.callbacks.EarlyStopping(monitor='val_accuracy',
+                                                 patience=5)
+checkpoint = tf.keras.callbacks.ModelCheckpoint(os.path.join(base_dir,'base_model.h5'),
+                                                        monitor='val_accuracy',
+                                                        save_best_only=True)
+
+# compile the model
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy', 
+              metrics=['accuracy'])
+
+# train the model
+history = model.fit(train_dataset,
+                    batch_size=BATCH_SIZE,
+                    epochs=INITIAL_EPOCHS,
+                    #callbacks=[reduceLROnPlateau,earlyStopping,checkpoint], 
+                    validation_data=val_dataset)
+                    
+```
+###  if you see loss/val_loss still improving, you should try to add more epochs to training
+
  
- 
- 
- 
- 
- 
+```
+history_frame = pd.DataFrame(history.history)
+history_frame.loc[:, ['loss', 'val_loss']].plot()
+history_frame.loc[:, ['accuracy', 'val_accuracy']].plot()
+```
+![nn]({{ '/images/2022-02-08-freeze.png' | relative_url }})
+{: style="width: 600px; max-width: 100%;"}
+
+# 11. fine tuning
+This step involves opening our model for modifications based on the new data. We would mark few of the top layers as "trainable" and try to train the model with lower learning rate than before so that "pretrained" weights don't get modified too much. We only want small updates in the pretrained weights.
+
+
+
+
  
  
  
