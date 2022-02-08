@@ -6,7 +6,7 @@ Heavily involved in all phases of Machine Learning Software Development and Deli
 
 Tools I use frequently are Python, Pandas, SQL, Numpy, Scipy, Matplotlib, Seaborn, Scikit-Learn / sklearn, Optuna, OpenCV, TensorFlow, Keras, PyTorch.
 
-connect with me page if you are recruiting.-
+connect with me if you are recruiting.-
 [blog](https://rahulbakshee.github.io/iWriteHere/)
 ,
 [linkedin](https://www.linkedin.com/in/rahulbakshee/)
