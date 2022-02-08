@@ -30,7 +30,7 @@ Bonus: You may get extra points for *Deployment*
 # README.txt shows how the directory structure
 !cat food-101/README.txt
 ```
-import required libraries
+### import required libraries
 ```
 import numpy as np
 import pandas as pd
@@ -65,8 +65,6 @@ print("[INFO] Total number of classes", len(labels))
 ```
  
  
- 
- 
  # 2. Create train and test subdirectories
  
  ```
@@ -98,12 +96,133 @@ os.listdir(base_dir)
 
 ```
  
- 
- 
- 
- 
- 
- 
+# 3. List number of samples in training and testing folders.
+The list is too long...so this piece of code just prints total number of samples.
+
+If we want to list all the files, we can set list_files = True
+
+```
+def list_and_count_files(folder, list_files=False):
+    """ 
+    lists number of samples in training and testing folders
+    
+    """
+    counter = 0
+    for root, dirs, files in os.walk(base_dir + folder + "/"):
+        for file in files:
+            if list_files:
+                print(os.path.join(root,file))
+        counter += len(files)
+    print("[INFO] Total number of samples in {} folder".format(folder), counter)
+
+# avoiding printing the all the file names in the display
+# set list_files to true if needed to print file names
+list_and_count_files(folder="train",list_files=False)
+list_and_count_files(folder="test",list_files=False)
+
+```
+
+# 4. Plot sample images from training and testing folders.
+
+```
+def display_images(folder):
+    """
+    plots sample images from training and testing datasets.
+    """
+    _, axes_list = plt.subplots(5, 7, figsize=(15,10))
+    for axes in axes_list:
+        for ax in axes:
+            ax.axis('off')
+            lbl = np.random.choice(os.listdir(base_dir+folder+"/"))
+            img = np.random.choice(os.listdir(base_dir+folder+"/" + lbl))
+            ax.imshow(PIL.Image.open(base_dir+folder+"/" + lbl+"/"+img))
+            ax.set_title(lbl)
+
+```
+```
+# display_images(folder="train")
+# display_images(folder="test")
+```
+
+
+# 5. create the train, val, test datasets out of train and test
+
+```
+# params
+IMG_SIZE = (200, 200) # keep it low to avoid colab crashing
+IMG_SHAPE = IMG_SIZE + (3,)
+NUM_CLASSES = 101
+BATCH_SIZE = 32
+INITIAL_EPOCHS = 10
+FINE_TUNE_EPOCHS = 10
+TOTAL_EPOCHS = INITIAL_EPOCHS + FINE_TUNE_EPOCHS
+
+```
+```
+from tensorflow.keras.preprocessing import image_dataset_from_directory
+
+train_dataset = image_dataset_from_directory(os.path.join(base_dir,"train"),
+                                            batch_size=BATCH_SIZE,
+                                            image_size=IMG_SIZE,
+                                            shuffle=True,
+                                            seed=seed,
+                                            validation_split=0.2,
+                                            subset="training")
+
+
+val_dataset = image_dataset_from_directory(os.path.join(base_dir,"train"),
+                                            batch_size=BATCH_SIZE,
+                                            image_size=IMG_SIZE,
+                                            shuffle=True,
+                                            seed=seed,
+                                            validation_split=0.2,
+                                            subset="validation")
+
+
+test_dataset = image_dataset_from_directory(os.path.join(base_dir,"test"),
+                                            batch_size=BATCH_SIZE,
+                                            image_size=IMG_SIZE,
+                                            shuffle=True,
+                                            seed=seed)
+
+
+```
+
+
+# 6. augment the data
+
+```
+# craete a tensorflow layer for augmentation
+data_augmentation = tf.keras.models.Sequential([
+                                    tf.keras.layers.RandomFlip('horizontal'),
+                                    tf.keras.layers.RandomRotation(0.2),
+                                    tf.keras.layers.RandomZoom(0.2)
+                                            ])
+```
+
+# 7. Preview the preprocessed dataset.
+
+```
+for image, _ in train_dataset.take(1):
+    plt.figure(figsize=(10, 10))
+    first_image = image[0]
+    for i in range(9):
+        ax = plt.subplot(3, 3, i + 1)
+        augmented_image = data_augmentation(tf.expand_dims(first_image, 0))
+        plt.imshow(augmented_image[0] / 255)
+        plt.axis('off')
+
+```
+////////////////////////////////add image
+
+# 8. configure dataset for performance
+
+```
+train_dataset = train_dataset.shuffle(500).prefetch(buffer_size=AUTOTUNE)
+val_dataset = val_dataset.prefetch(buffer_size=AUTOTUNE)
+test_dataset = test_dataset.prefetch(buffer_size=AUTOTUNE)
+```
+
  
  
  
