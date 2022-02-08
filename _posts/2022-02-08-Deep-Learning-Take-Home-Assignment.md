@@ -11,6 +11,8 @@ Judging criteria would be how to format raw data and put in respective directori
 
 Bonus: You may get extra points for *Deployment*
 
+Read this on [linkedin](https://www.linkedin.com/posts/rahulbakshee_deep-learning-take-home-assignment-activity-6896906587278061568-XzZv)
+
 Follow the code here 😀 **[google colab](https://colab.research.google.com/drive/1Mb_fb7Lz1Kb9i6x-80EmsNfq-n2wKHI4?usp=sharing)**
 
 >connect with me at- 
@@ -322,6 +324,5 @@ Adding more compute power (**colab pro**)🤑 would definitely help to prototype
 
 Thanks for reading till the end. I hope you learnt something. 🤗 
 
-[linkedin post]() 
 
 Read [other articles](https://rahulbakshee.github.io/iWriteHere/) on `Data Science, Machine Learning, Deep Learning and Computer Vision`.
