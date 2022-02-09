@@ -304,7 +304,7 @@ Model was correctly able to predict the food dish was **Nachos**
 # 14. Conclusion
 The reason for low Train/Test accuracy and low confidence score while prediction is because I had to take necessary measures **to avoid google colab crashing** . 
 
-I used all of the Images and classes(101) and therefore had to reduce the image size to 200x200 to avoid crashing of colab.
+I used all of the Images and classes(101) and therefore had to reduce the image size to 200x200 to avoid crashing of colab. But one can try to reduce the number of classes and train the model again to see very high accuracies ( above **90% accuracy**)
 
 I experimented to keep higher batch size also, but had to keep small batch size (32) to avoid colab crashing. One can try to experiment and remeber to tweek the **cache/shuffle/prefetch** accordingly.
 
