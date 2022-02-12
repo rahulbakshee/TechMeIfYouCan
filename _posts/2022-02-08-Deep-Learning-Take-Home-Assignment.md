@@ -240,6 +240,8 @@ history_frame.loc[:, ['accuracy', 'val_accuracy']].plot()
 ```
 ![nn]({{ '/images/2022-02-08-freeze.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
+![nn]({{ '/images/2022-02-08-freeze1.png' | relative_url }})
+{: style="width: 600px; max-width: 100%;"}
 
 # 11. Fine tuning
 This step involves opening our model for modifications based on the new data. We would mark few of the top layers as "trainable" and try to train the model with lower learning rate than before so that "pretrained" weights don't get modified too much. We only want small updates in the pretrained weights.
@@ -271,7 +273,9 @@ Plot the loss and accuracy curves
 
 ![nn]({{ '/images/2022-02-08-unfreeze.png' | relative_url }})
 {: style="width: 600px; max-width: 100%;"}
- 
+
+![nn]({{ '/images/2022-02-08-unfreeze1.png' | relative_url }})
+{: style="width: 600px; max-width: 100%;"}
  
 # 12. Evaluate on test dataset
  
