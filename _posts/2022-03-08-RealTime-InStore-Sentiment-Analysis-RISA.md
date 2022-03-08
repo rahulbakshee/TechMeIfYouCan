@@ -48,8 +48,7 @@ There are various datasets avilable for use:
 
 ![emotions]({{ '/images/2022-03-08-all-emotions.png' | relative_url }})
 <img src="/images/2022-03-08-all-emotions.png" style="width:600px;height:600;">
-<caption><center> </center></caption>
-<caption><center> <u><b>Figure 2</u></b>: This figure shows real-time distribution of emotions per customer present in store<br> </center></caption>
+Figure 2: This figure shows real-time distribution of emotions per customer present in store
 
 
 ### Conclusion
