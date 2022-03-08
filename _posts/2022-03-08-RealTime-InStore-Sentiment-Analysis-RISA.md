@@ -11,6 +11,8 @@ In-Store analytics is very important when it comes to ->
 
 Companies/Retailers have been using image/video analysis of in-store customers' interactions to get insights for the above tasks. But, most systems are batch-mode and not real-time. The primary use of real-time is to know instantly how the customer feels and change your course of action based on that. 
 
+> read this on [github pages](https://rahulbakshee.github.io/iWriteHere/2022/03/08/RealTime-InStore-Sentiment-Analysis-RISA.html) 
+
 ### Approach
 In this project we will build a Real-Time In-Store Sentiment Analysis system(RISA) to know more about customer's sentiments while they are inside the store. After generating real-time insights of customer's sentiments, the store owner can work on cutomer loyalty and engagement programs. 
 
