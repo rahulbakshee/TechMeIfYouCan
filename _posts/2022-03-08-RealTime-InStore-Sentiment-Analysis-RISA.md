@@ -18,9 +18,8 @@ In this project we will build a Real-Time In-Store Sentiment Analysis system(RIS
 - Step 2 - The facial crops are then classified as one of the categories (Happy, Sad, Neutral etc.) for each person.
 
 
-![nn]({{ '/images/2022-02-08-food.png' | relative_url }})
-<caption><center> </center></caption>
-<caption><center> <u><b>Figure 1</u></b>: This figure shows High level System Design of Real-Time In-Store Sentiment Analysis [RISA]<br> </center></caption>
+<img src="/images/2022-03-08-RISA-diag.png" style="width:600px;height:600;">
+Figure 1: This figure shows High level System Design of Real-Time In-Store Sentiment Analysis [RISA]
 
 
 
