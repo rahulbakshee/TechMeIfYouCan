@@ -32,6 +32,7 @@ To achieve the Face Detection , there are many methods available and each has pr
 - [HAAR Cascade Classifier from OpenCV](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html)
 - MTCNN (Facenet-pytorch)
 - [DLib(HOG/CNN)](http://dlib.net/) / [face_recognition](https://github.com/ageitgey/face_recognition)
+- [MediaPipe Face Detection](https://google.github.io/mediapipe/solutions/face_detection.html)
 - etc.
 
 For Facial Expression Recognition, we can use any classifier:
