@@ -146,3 +146,8 @@ _, titles = index(np.array(["42"]))
 print(f"Top 3 recommendations for user 42: {titles[0, :3]}")
 
 ```
+# References
+Overall, recommendation systems rely on sophisticated algorithms and data processing techniques to analyze user behavior and preferences and make personalized recommendations. By leveraging advanced machine learning techniques such as collaborative filtering, content-based algorithms, and hybrid approaches, these systems can provide valuable insights into user behavior and help businesses optimize their offerings to improve user engagement and revenue.
+
+- https://www.tensorflow.org/recommenders
+- https://developers.google.com/machine-learning/recommendation
