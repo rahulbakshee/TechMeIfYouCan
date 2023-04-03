@@ -21,3 +21,21 @@ Another important aspect of recommendation systems is evaluation. Since these sy
 In conclusion, recommendation systems are a powerful tool for personalizing user experiences and driving engagement and revenue in various industries. These systems use machine learning algorithms to analyze user behavior and preferences and make personalized recommendations. By leveraging large amounts of data and advanced techniques such as matrix factorization, recommendation systems can provide valuable insights into user preferences and help businesses optimize their offerings.
 
 
+Let us dive into code:
+
+# TensorFlow Recommenders 
+TensorFlow Recommenders is a library for building recommender system models using TensorFlow.
+
+It helps with the full workflow of building a recommender system: data preparation, model formulation, training, evaluation, and deployment.
+
+It's built on Keras and aims to have a gentle learning curve while still giving you the flexibility to build complex models.
+
+```
+from typing import Dict, Text
+
+import numpy as np
+import tensorflow as tf
+
+import tensorflow_datasets as tfds
+import tensorflow_recommenders as tfrs
+```
