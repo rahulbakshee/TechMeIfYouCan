@@ -22,6 +22,7 @@ In conclusion, recommendation systems are a powerful tool for personalizing user
 
 
 > Let us dive into code:
+ We are going to use Tensorflow recommenders libarary and MovieLens dataset for handson
 
 # TensorFlow Recommenders 
 TensorFlow Recommenders is a library for building recommender system models using TensorFlow.
