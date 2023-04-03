@@ -30,6 +30,14 @@ It helps with the full workflow of building a recommender system: data preparati
 
 It's built on Keras and aims to have a gentle learning curve while still giving you the flexibility to build complex models.
 
+
+### installs
+```
+!pip install -q tensorflow-recommenders
+!pip install -q --upgrade tensorflow-datasets
+```
+
+### imports
 ```
 from typing import Dict, Text
 
@@ -38,4 +46,29 @@ import tensorflow as tf
 
 import tensorflow_datasets as tfds
 import tensorflow_recommenders as tfrs
+```
+
+### data loading
+```
+# Ratings data.
+ratings = tfds.load('movielens/100k-ratings', split="train")
+# Features of all the available movies.
+movies = tfds.load('movielens/100k-movies', split="train")
+
+# Select the basic features.
+ratings = ratings.map(lambda x: {
+    "movie_title": x["movie_title"],
+    "user_id": x["user_id"]
+})
+movies = movies.map(lambda x: x["movie_title"])
+```
+
+### data preprocessing
+```
+# Build vocabularies to convert user ids and movie titles into integer indices for embedding layers:
+user_ids_vocabulary = tf.keras.layers.StringLookup(mask_token=None)
+user_ids_vocabulary.adapt(ratings.map(lambda x: x["user_id"]))
+
+movie_titles_vocabulary = tf.keras.layers.StringLookup(mask_token=None)
+movie_titles_vocabulary.adapt(movies)
 ```
